@@ -1,3 +1,338 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+/* =========================================
+   Catppuccin Mocha (Official Palette)
+   Quartz Custom Theme
+   ========================================= */
+
+/* ---- Official Catppuccin Mocha Colors ---- */
+:root {
+  /* Base */
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+
+  /* Surfaces */
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-surface2: #585b70;
+
+  /* Text */
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+
+  /* Accents */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+}
+
+/* ---- Global Layout ---- */
+body {
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+}
+
+.page {
+  background-color: var(--ctp-base);
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--ctp-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Sidebars ---- */
+/* ---- Sidebars (Unified with Main Page) ---- */
+.sidebar,
+.left,
+.right,
+.explorer {
+  background-color: var(--ctp-base);
+  border-color: var(--ctp-surface1);
+}
+
+.explorer-entry:hover {
+  background-color: var(--ctp-surface0);
+}
+
+/* ---- Page Title ---- */
+.page-title,
+article h1 {
+  color: var(--ctp-red);
+  font-weight: 800;
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+
+/* ---- Headings (Distinct, Semantic Colors) ---- */
+article h2 {
+  color: var(--ctp-red);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2.2rem;
+}
+
+article h3 {
+  color: var(--ctp-yellow);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+article h4 {
+  color: var(--ctp-green);
+  font-weight: 600;
+}
+
+article h5 {
+  color: var(--ctp-teal);
+  font-weight: 500;
+}
+
+article h6 {
+  color: var(--ctp-sky);
+  font-weight: 500;
+}
+
+/* ---- Body Text ---- */
+article p,
+article li {
+  color: var(--ctp-text);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ---- Blockquotes ---- */
+article blockquote {
+  border-left: 3px solid var(--ctp-mauve);
+  padding-left: 1rem;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-subtext1);
+}
+
+/* ---- Inline Code ---- */
+code {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-teal);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+/* ---- Code Blocks ---- */
+pre {
+  //   background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface1);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+pre code {
+  color: var(--ctp-text);
+  background: none;
+  padding: 0;
+}
+
+/* ---- Horizontal Rules ---- */
+hr {
+  border: none;
+  border-top: 1px solid var(--ctp-surface1);
+  margin: 2rem 0;
+}
+
+/* ---- Footer ---- */
+footer {
+  color: var(--ctp-subtext1);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+footer a {
+  color: #cba6f7;
+}
+
+/* ---- Optimal Reading Width ---- */
+article {
+  max-width: 68ch;
+}
+
+/* ---- Subtle Catppuccin selection ---- */
+::selection {
+  background: var(--ctp-surface1);
+  color: var(--ctp-text);
+}
+
+::-moz-selection {
+  background: var(--ctp-surface1);
+  color: var(--ctp-text);
+}
+:root {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--ctp-base);
+    color: var(--ctp-text);
+  }
+}
+
+.theme-toggle {
+  display: none !important;
+}
+/* ---- Search Bar Styling (Catppuccin Mocha) ---- */
+.search,
+.search input,
+input[type="search"] {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 6px;
+}
+
+/* Placeholder text */
+.search input::placeholder,
+input[type="search"]::placeholder {
+  color: var(--ctp-teal);
+}
+
+/* Focus state */
+.search input:focus,
+input[type="search"]:focus {
+  outline: none;
+  border-color: var(--ctp-mauve);
+  background-color: var(--ctp-surface1);
+}
+
+/* Search results dropdown (if present) */
+.search-results {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface1);
+}
+/* ---- Search placeholder visibility fix ---- */
+.search input::placeholder,
+input[type="search"]::placeholder {
+  color: var(--ctp-mauve);
+  opacity: 1; /* important: browsers often lower this by default */
+}
+
+/* Firefox */
+.search input::-moz-placeholder,
+input[type="search"]::-moz-placeholder {
+  color: var(--ctp-pink);
+  opacity: 1;
+}
+
+/* When focused, make it slightly dimmer (optional polish) */
+.search input:focus::placeholder,
+input[type="search"]:focus::placeholder {
+  color: var(--ctp-subtext0);
+}
+.search > .search-button > p {
+  color: var(--ctp-subtext1);
+  opacity: 1;
+}
+
+.search > .search-container > .search-space > input {
+  background-color: var(--ctp-crust);
+  border-radius: 10px;
+}
+/* ---- Search Input Styling (Refined) ---- */
+.search > .search-container > .search-space > input {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 8px;
+
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Placeholder text */
+.search > .search-container > .search-space > input::placeholder {
+  color: var(--ctp-subtext1);
+  opacity: 1;
+}
+
+/* Focus state */
+.search > .search-container > .search-space > input:focus {
+  outline: none;
+  background-color: var(--ctp-surface1);
+  border-color: var(--ctp-mauve);
+  box-shadow: 0 0 0 1px var(--ctp-mauve);
+}
+
+/* Hover state */
+.search > .search-container > .search-space > input:hover {
+  background-color: var(--ctp-surface1);
+}
+
+/* ---- Search Results Panel ---- */
+.search > .search-container > .search-space > .search-layout[data-preview] > .results-container {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 10px;
+
+  padding: 0.4rem;
+  margin-top: 0.4rem;
+
+  //   box-shadow:
+  //     0 8px 24px rgba(0, 0, 0, 0.35),
+  //     0 2px 6px rgba(0, 0, 0, 0.25);
+
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.search > .search-container > .search-space > .search-layout > .preview-container {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface1);
+  border-right: 0;
+  border-radius: 10px;
+
+  padding: 0.4rem;
+  margin-top: 0.4rem;
+
+  //   box-shadow:
+  //     0 8px 24px rgba(0, 0, 0, 0.35),
+  //     0 2px 6px rgba(0, 0, 0, 0.25);
+
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* ---- Article Title Refinement ---- */
+h1.article-title {
+  color: var(--ctp-mauve);
+
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+  margin-bottom: 1.4rem;
+
+  max-width: 34ch;
+}

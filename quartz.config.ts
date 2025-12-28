@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "pvs.?",
+    pageTitle: "pvs does stuff",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -23,39 +23,40 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
+        title: "Roboto Mono",
         header: "JetBrains Mono",
-        body: "JetBrains Mono",
-        code: "IBM Plex Mono",
+        body: "Lexend",
+        code: "Cascadia Code",
       },
       colors: {
         lightMode: {
-          /* Catppuccin Latte – tuned for Quartz */
-          light: "#f5f7fa", // base (lighter than Latte base)
-          lightgray: "#e6e9ef", // mantle
-          gray: "#d0d5dd", // surface
-          darkgray: "#6c6f85", // subtext
-          dark: "#4c4f69", // text
+          /* Catppuccin Latte – vibrant */
+          light: "#1e1e2e",
+          lightgray: "#181825",
+          gray: "#2f3144",
+          darkgray: "#bac2de",
+          dark: "#e6e9ff",
 
-          secondary: "#7287fd", // lavender (links, accents)
-          tertiary: "#179299", // teal (secondary accents)
+          secondary: "#91b6ff", // brighter lavender-blue
+          tertiary: "#f9e2af", // punchier teal
 
-          highlight: "rgba(114, 135, 253, 0.12)", // soft lavender
-          textHighlight: "#df8e1d66", // mellow yellow
+          highlight: "rgba(145, 182, 255, 0.22)", // visible but soft
+          textHighlight: "#f9e2af99", // warm, readable
         },
 
         darkMode: {
-          /* Catppuccin Mocha – tuned for Quartz */
-          light: "#1e1e2e", // base
-          lightgray: "#181825", // mantle
-          gray: "#2a2b3c", // softened surface
-          darkgray: "#a6adc8", // subtext
-          dark: "#cdd6f4", // primary text
+          /* Catppuccin Mocha – vibrant */
+          light: "#1e1e2e",
+          lightgray: "#181825",
+          gray: "#2f3144",
+          darkgray: "#bac2de",
+          dark: "#e6e9ff",
 
-          secondary: "#b4befe", // lavender (links)
-          tertiary: "#94e2d5", // teal
+          secondary: "#91b6ff", // brighter lavender-blue
+          tertiary: "#f9e2af", // punchier teal
 
-          highlight: "rgba(180, 190, 254, 0.14)", // lavender glow
-          textHighlight: "#f9e2af66", // soft yellow
+          highlight: "rgba(145, 182, 255, 0.22)", // visible but soft
+          textHighlight: "#f9e2af99", // warm, readable
         },
       },
     },
@@ -68,8 +69,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "github-light",
-          dark: "github-dark",
+          light: "catppuccin-mocha",
+          dark: "catppuccin-mocha",
         },
         keepBackground: false,
       }),

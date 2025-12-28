@@ -13,6 +13,7 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
+        <p>Built with ❤️ by pvs.</p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>
