@@ -9,7 +9,7 @@
 /* ---- Official Catppuccin Mocha Colors ---- */
 :root {
   /* Base */
-  --ctp-base: #1e1e2e;
+  --ctp-base: #13131c;
   --ctp-mantle: #181825;
   --ctp-crust: #11111b;
 
@@ -338,4 +338,100 @@ h1.article-title {
 }
 button.toc-header h3 {
   color: var(--ctp-blue);
+}
+/* ---- Recommendations Cards ---- */
+.rec-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 10px;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--ctp-surface0);
+    border-color: var(--ctp-mauve);
+  }
+
+  img {
+    width: 130px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .rec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .rec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+
+    h3 {
+      color: var(--ctp-text);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+  .rec-rating {
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    color: var(--ctp-yellow);
+    background-color: var(--ctp-surface0);
+    border: 1px solid var(--ctp-surface2);
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+
+  .rec-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-family: var(--codeFont);
+    font-size: 0.78rem;
+    color: var(--ctp-subtext1);
+    background-color: var(--ctp-surface0);
+    border: 1px solid var(--ctp-surface1);
+    padding: 0.15rem 0.45rem;
+    border-radius: 5px;
+  }
+
+  p {
+    color: var(--ctp-subtext1);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+/* ---- Scroll Progress Bar ---- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  /* background: linear-gradient(to right, var(--ctp-maroon), var(--ctp-red)); */
+  background: var(--ctp-yellow);
+  z-index: 9999;
+  transition: width 0.1s ease;
+  border-radius: 0 2px 2px 0;
 }
