@@ -6,6 +6,8 @@ tags:
   - tech
   - software
   - hardware
+permalink: What-I-Use
+lang: en
 ---
 This page covers software and hardware that I make use on daily basis.
 
