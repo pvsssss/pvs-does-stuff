@@ -2,6 +2,6 @@ import { QuartzComponentConstructor } from "./types"
 
 export default (() => {
   return () => (
-    <script src="/static/oneko.js" async />
+    <script src="/pvs-does-stuff/static/oneko.js" async />
   )
 }) satisfies QuartzComponentConstructor
