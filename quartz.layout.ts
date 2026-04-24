@@ -1,12 +1,13 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import ScrollProgress from "./quartz/components/ScrollProgress"
+import Oneko from "./quartz/components/Oneko"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [ScrollProgress()],  // here
+  afterBody: [ScrollProgress(),Oneko()],  // here
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/pvssss",
