@@ -869,11 +869,13 @@ button.toc-header h3 {
   border-radius: 8px;
   width: 2.25rem;
   height: 2.25rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
+  line-height: 1;
   cursor: pointer;
+  padding: 0;
   transition:
     border-color 0.15s ease,
     opacity 0.15s ease;
@@ -886,7 +888,8 @@ button.toc-header h3 {
     content: "Toggle Oneko";
     position: absolute;
     bottom: calc(100% + 0.5rem);
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--ctp-mantle);
     border: 1px solid var(--ctp-surface1);
     color: var(--ctp-subtext1);

@@ -3,6 +3,7 @@ import { QuartzComponentConstructor } from "./types"
 export default (() => {
   return () => (
     <>
+      <script src="/pvs-does-stuff/static/oneko.js" />
       <button id="oneko-toggle">🐱</button>
       <script dangerouslySetInnerHTML={{ __html: `
         (function() {
@@ -24,28 +25,11 @@ export default (() => {
             };
           }
 
-          function loadOneko() {
-            // remove existing cat and script
-            const oldCat = document.getElementById("oneko");
-            const oldScript = document.getElementById("oneko-script");
-            if (oldCat) oldCat.remove();
-            if (oldScript) oldScript.remove();
-
-            const script = document.createElement("script");
-            script.id = "oneko-script";
-            script.src = "/pvs-does-stuff/static/oneko.js?" + Date.now();
-            script.onload = function() {
-              setTimeout(applyState, 100);
-            };
-            document.body.appendChild(script);
-          }
-
           initToggle();
-          loadOneko();
-
+          setTimeout(applyState, 300);
           document.addEventListener("nav", function() {
             initToggle();
-            loadOneko();
+            setTimeout(applyState, 300);
           });
         })();
       `}} />
