@@ -877,9 +877,6 @@ button.toc-header h3 {
   &:hover {
     border-color: var(--ctp-mauve);
   }
-}
-#oneko-toggle {
-  position: relative;
 
   &::after {
     content: "Toggle Oneko";
