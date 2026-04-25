@@ -61,6 +61,7 @@ export default (() => {
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
         <meta property="og:image:alt" content={description} />
+		<script src="/pvs-does-stuff/static/oneko.js" defer />
 
         {!usesCustomOgImage && (
           <>
