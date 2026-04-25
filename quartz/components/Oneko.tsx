@@ -21,13 +21,15 @@ export default (() => {
           }
 
           function initToggle() {
-            const btn = document.getElementById("oneko-toggle");
-            if (!btn) return;
-            btn.onclick = () => {
+            const old = document.getElementById("oneko-toggle");
+            if (!old) return;
+            const btn = old.cloneNode(true);
+            old.parentNode.replaceChild(btn, old);
+            btn.addEventListener("click", () => {
               const enabled = localStorage.getItem("oneko-enabled") !== "false";
               localStorage.setItem("oneko-enabled", String(!enabled));
               applyState();
-            };
+            });
           }
 
           function reloadCat() {
@@ -35,18 +37,15 @@ export default (() => {
             const oldScript = document.getElementById("oneko-script");
             if (oldCat) oldCat.remove();
             if (oldScript) oldScript.remove();
-
             const s = document.createElement("script");
             s.id = "oneko-script";
             s.src = "/pvs-does-stuff/static/oneko.js";
             document.body.appendChild(s);
           }
 
-          // first load — cat already injected by Head.tsx
           initToggle();
           waitForCat(applyState);
 
-          // nav — kill old cat, spawn fresh, reinit
           document.addEventListener("nav", function() {
             reloadCat();
             initToggle();
