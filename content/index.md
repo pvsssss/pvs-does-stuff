@@ -20,14 +20,14 @@ I am a passionate reader, to the point that I have read almost all the horror/th
 <p class="about-section-label">// i obsess over</p>
 <div class="about-skills">
   <span class="skill sk-py">CTFs</span>
-  <span class="skill sk-c">pentesting</span>
-  <span class="skill sk-bash">homelabbing</span>
-  <span class="skill sk-js">low level systems</span>
-  <span class="skill sk-c">computer networks</span>
-  <span class="skill sk-py">horror fiction</span>
-  <span class="skill sk-bash">linguistics</span>
-  <span class="skill sk-js">typography</span>
-  <span class="skill sk-c">cryptography</span>
+<span class="skill sk-c">pentesting</span>
+<span class="skill sk-bash">homelabbing</span>
+<span class="skill sk-green">low level systems</span>
+<span class="skill sk-yellow">computer networks</span>
+<span class="skill sk-bash">horror fiction</span>
+<span class="skill sk-green">linguistics</span>
+<span class="skill sk-sky">typography</span>
+<span class="skill sk-js">cryptography</span>
 </div>
 
 </div>

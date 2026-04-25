@@ -24,7 +24,10 @@ This page covers software and hardware that I make use on daily basis.
 - **Photo Editor** - Canva Affinity
 - **IDE** - Zed (Catppuccin Espresso Blur theme)
 - **Music** - Spotify, SpotiFLAC with Pixel Player on mobile
+- **PDF Viewer** - Sumatra Viewer
+- **Researching** - Zotero
 - **Browser** - Brave
+- **To-do App** - TickTick
 
 ## Extensions
 1. AdBlock for YT

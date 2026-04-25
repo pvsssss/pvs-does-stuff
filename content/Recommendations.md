@@ -97,3 +97,52 @@ permalink: Stuff-I-Like
     <p>BANGER story. Love it. Beautiful panels. </p>
   </div>
 </div>
+
+## Anime
+<div class="rec-card">
+  <img src="/Images/reze-arc.png" alt="Reze Arc" />
+  <div class="rec-info">
+    <div class="rec-header">
+      <h3>Chainsaw Man: Reze Arc</h3>
+      <span class="rec-rating">10/10</span>
+    </div>
+    <div class="rec-tags">
+      <span class="tag">movie</span>
+      <span class="tag">anime</span>
+    </div>
+    <p>Cool storyline. Can relate.</p>
+  </div>
+</div>
+
+## Games
+
+<div class="rec-card">
+  <img src="/Images/boy.png" alt="God Of War" />
+  <div class="rec-info">
+    <div class="rec-header">
+      <h3>God Of War</h3>
+      <span class="rec-rating">8/10</span>
+    </div>
+    <div class="rec-tags">
+      <span class="tag">game</span>
+      <span class="tag">singleplayer</span>
+      <span class="tag">hack and slash</span>
+    </div>
+		<p>Come here *boy*, </p>
+  </div>
+</div>
+<div class="rec-card">
+  <img src="/Images/cotl.png" alt="Cult of The Lamb" />
+  <div class="rec-info">
+    <div class="rec-header">
+      <h3>Cult Of The Lamb</h3>
+      <span class="rec-rating">8/10</span>
+    </div>
+    <div class="rec-tags">
+      <span class="tag">game</span>
+      <span class="tag">singleplayer</span>
+      <span class="tag">roguelike</span>
+    </div>
+		<p>Lamb game good. Addicting. </p>
+  </div>
+</div>
