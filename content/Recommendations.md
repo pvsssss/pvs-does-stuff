@@ -16,7 +16,7 @@ permalink: Stuff-I-Like
 
 
 <div class="rec-card">
-  <img src="/Images/fourth-wing.png" alt="Fourth Wing" />
+  <img src="/Images/fourth-wing.webp" alt="Fourth Wing" loading="lazy" />
   <div class="rec-info">
     <div class="rec-header">
       <h3>Fourth Wing Trilogy / The Empyrean</h3>
@@ -32,7 +32,7 @@ permalink: Stuff-I-Like
   </div>
 </div>
 <div class="rec-card">
-  <img src="/Images/Just-A-Mercenary.png" alt="Just A Mercenary" />
+  <img src="/Images/Just-A-Mercenary.webp" alt="Just A Mercenary" loading="lazy" />
   <div class="rec-info">
     <div class="rec-header">
       <h3>Just A Mercenary?</h3>
@@ -47,7 +47,7 @@ permalink: Stuff-I-Like
   </div>
 </div>
 <div class="rec-card">
-  <img src="/Images/maus.png" alt="The Complete Maus" />
+  <img src="/Images/maus.webp" alt="The Complete Maus" loading="lazy"/>
   <div class="rec-info">
     <div class="rec-header">
       <h3>The Complete Maus</h3>
@@ -67,7 +67,7 @@ permalink: Stuff-I-Like
 ## Manga
 
 <div class="rec-card">
-  <img src="/Images/uzumaki.png" alt="Uzumaki" />
+  <img src="/Images/uzumaki.webp" alt="Uzumaki" loading="lazy" />
   <div class="rec-info">
     <div class="rec-header">
       <h3>Uzumaki</h3>
@@ -83,7 +83,7 @@ permalink: Stuff-I-Like
   </div>
 </div>
 <div class="rec-card">
-  <img src="/Images/chainsaw-man.png" alt="Chainsaw Man" />
+  <img src="/Images/chainsaw-man.webp" alt="Chainsaw Man" loading="lazy"/>
   <div class="rec-info">
     <div class="rec-header">
       <h3>Chainsaw Man</h3>
@@ -100,7 +100,7 @@ permalink: Stuff-I-Like
 
 ## Anime
 <div class="rec-card">
-  <img src="/Images/reze-arc.png" alt="Reze Arc" />
+  <img src="/Images/reze-arc.webp" alt="Reze Arc" loading="lazy"/>
   <div class="rec-info">
     <div class="rec-header">
       <h3>Chainsaw Man: Reze Arc</h3>
@@ -117,7 +117,7 @@ permalink: Stuff-I-Like
 ## Games
 
 <div class="rec-card">
-  <img src="/Images/boy.png" alt="God Of War" />
+  <img src="/Images/boy.webp" alt="God Of War" loading="lazy"/>
   <div class="rec-info">
     <div class="rec-header">
       <h3>God Of War</h3>
@@ -132,7 +132,7 @@ permalink: Stuff-I-Like
   </div>
 </div>
 <div class="rec-card">
-  <img src="/Images/cotl.png" alt="Cult of The Lamb" />
+  <img src="/Images/cotl.webp" alt="Cult of The Lamb" loading="lazy"/>
   <div class="rec-info">
     <div class="rec-header">
       <h3>Cult Of The Lamb</h3>
