@@ -867,7 +867,11 @@ button.toc-header h3 {
   background: var(--ctp-mantle);
   border: 1px solid var(--ctp-surface1);
   border-radius: 8px;
-  padding: 0.4rem 0.6rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
   cursor: pointer;
   transition:
