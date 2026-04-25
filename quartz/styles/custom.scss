@@ -887,9 +887,9 @@ button.toc-header h3 {
   &::after {
     content: "Toggle Oneko";
     position: absolute;
-    bottom: calc(100% + 0.5rem);
-    left: 50%;
-    transform: translateX(-50%);
+    right: calc(100% + 0.6rem);
+    top: 50%;
+    transform: translateY(-50%);
     background: var(--ctp-mantle);
     border: 1px solid var(--ctp-surface1);
     color: var(--ctp-subtext1);

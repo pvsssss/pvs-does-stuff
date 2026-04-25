@@ -15,6 +15,12 @@ export default (() => {
             if (btn) btn.style.opacity = enabled ? "1" : "0.4";
           }
 
+          function waitForCat() {
+            const cat = document.getElementById("oneko");
+            if (cat) { applyState(); return; }
+            requestAnimationFrame(waitForCat);
+          }
+
           function initToggle() {
             const btn = document.getElementById("oneko-toggle");
             if (!btn) return;
@@ -26,10 +32,10 @@ export default (() => {
           }
 
           initToggle();
-          setTimeout(applyState, 300);
+          waitForCat();
           document.addEventListener("nav", function() {
             initToggle();
-            setTimeout(applyState, 300);
+            waitForCat();
           });
         })();
       `}} />
