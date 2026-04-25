@@ -878,3 +878,28 @@ button.toc-header h3 {
     border-color: var(--ctp-mauve);
   }
 }
+#oneko-toggle {
+  position: relative;
+
+  &::after {
+    content: "Toggle Oneko";
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    right: 0;
+    background: var(--ctp-mantle);
+    border: 1px solid var(--ctp-surface1);
+    color: var(--ctp-subtext1);
+    font-size: 0.72rem;
+    font-family: var(--codeFont);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
