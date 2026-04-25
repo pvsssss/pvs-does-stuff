@@ -5,53 +5,49 @@ export default (() => {
     <>
       <button id="oneko-toggle">🐱</button>
       <script dangerouslySetInnerHTML={{ __html: `
-        function onekoApplyState() {
-          const enabled = localStorage.getItem("oneko-enabled") !== "false";
-          const cat = document.getElementById("oneko");
-          const btn = document.getElementById("oneko-toggle");
-          if (cat) cat.style.display = enabled ? "block" : "none";
-          if (btn) btn.style.opacity = enabled ? "1" : "0.4";
-        }
-
-        function onekoInitToggle() {
-          const btn = document.getElementById("oneko-toggle");
-          if (!btn) return;
-          btn.onclick = () => {
+        (function() {
+          function applyState() {
             const enabled = localStorage.getItem("oneko-enabled") !== "false";
-            localStorage.setItem("oneko-enabled", String(!enabled));
-            onekoApplyState();
-          };
-        }
-
-        function onekoLoad() {
-          const existing = document.getElementById("oneko");
-          if (existing) existing.remove();
-          const oldScript = document.getElementById("oneko-script");
-          if (oldScript) oldScript.remove();
-
-          const script = document.createElement("script");
-          script.id = "oneko-script";
-          script.src = "/pvs-does-stuff/static/oneko.js";
-
-          const observer = new MutationObserver(() => {
             const cat = document.getElementById("oneko");
-            if (cat) {
-              observer.disconnect();
-              onekoApplyState();
-            }
+            const btn = document.getElementById("oneko-toggle");
+            if (cat) cat.style.display = enabled ? "block" : "none";
+            if (btn) btn.style.opacity = enabled ? "1" : "0.4";
+          }
+
+          function initToggle() {
+            const btn = document.getElementById("oneko-toggle");
+            if (!btn) return;
+            btn.onclick = () => {
+              const enabled = localStorage.getItem("oneko-enabled") !== "false";
+              localStorage.setItem("oneko-enabled", String(!enabled));
+              applyState();
+            };
+          }
+
+          function loadOneko() {
+            // remove existing cat and script
+            const oldCat = document.getElementById("oneko");
+            const oldScript = document.getElementById("oneko-script");
+            if (oldCat) oldCat.remove();
+            if (oldScript) oldScript.remove();
+
+            const script = document.createElement("script");
+            script.id = "oneko-script";
+            script.src = "/pvs-does-stuff/static/oneko.js?" + Date.now();
+            script.onload = function() {
+              setTimeout(applyState, 100);
+            };
+            document.body.appendChild(script);
+          }
+
+          initToggle();
+          loadOneko();
+
+          document.addEventListener("nav", function() {
+            initToggle();
+            loadOneko();
           });
-          observer.observe(document.body, { childList: true });
-
-          document.body.appendChild(script);
-        }
-
-        onekoInitToggle();
-        onekoLoad();
-
-        document.addEventListener("nav", () => {
-          onekoLoad();
-          onekoInitToggle();
-        });
+        })();
       `}} />
     </>
   )
