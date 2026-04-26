@@ -1,12 +1,13 @@
 ---
-title: ML - Tracker
+title: ML Roadmap
 draft: false
 description:
 tags:
-  - example-tag
 ---
 # 10-Month ML/AI Internship Roadmap
+
 ### Senior ML Engineer · Applied AI Tech Lead
+
 **Target:** B.Tech CSE (2nd Year) → Internship-Ready ML/AI Engineer  
 **Stack:** RTX 4060 · WSL2 Ubuntu 24.04 · PyTorch · HuggingFace · FastAPI · Docker  
 **Constraint:** No Computer Vision. Pure NLP/Tabular/LLM track.
@@ -14,13 +15,14 @@ tags:
 ---
 
 ## Quick Stats
-| Dimension | Value |
-|---|---|
-| Duration | 52 Weeks (10–12 months) |
-| Phases | 6 (0 → 5) |
-| Topics Covered | 30+ with full template |
-| Projects | 8 (Beginner → Production LLM) |
-| CV Topics | 0 (strictly excluded) |
+
+| Dimension      | Value                         |
+| -------------- | ----------------------------- |
+| Duration       | 52 Weeks (10–12 months)       |
+| Phases         | 6 (0 → 5)                     |
+| Topics Covered | 30+ with full template        |
+| Projects       | 8 (Beginner → Production LLM) |
+| CV Topics      | 0 (strictly excluded)         |
 
 ---
 
@@ -44,16 +46,17 @@ Weeks 49–52 │ Phase 5: Interview Prep & Portfolio Finalization
 
 **Core Principle:** Weekdays = 4–5 hours active learning. Weekends = 6–8 hours project/review. Never skip the math block.
 
-| Time Slot | Activity | Details |
-|---|---|---|
-| 6:00–7:30 | **Math & Theory** | CS229 lecture or textbook derivations. Work every proof by hand. Derive every gradient and update rule yourself on paper — never just read. |
-| 8:00–10:00 | **Coding Implementation** | Implement the morning's theory in NumPy first, then PyTorch. Math-to-code translation must be exact. Write unit tests for every function. |
-| 16:00–17:30 | **Problem Sets** | deep-ml.com problems + Kaggle tabular. LeetCode medium (Weeks 1–16), then ML system design (Week 17+). |
-| 20:00–21:00 | **Paper Reading + Writing** | Read one paper section (abstract + methods). Write one paragraph blog draft. Build in public from Week 4. |
-| Weekend AM | **Project Sprint** | 4–5 hours. Build, debug, deploy. Docs only — no tutorial following. Push to GitHub. |
-| Weekend PM | **Review & Consolidate** | Rewrite week's derivations from memory. Update README. Record 5-min video walkthrough for LinkedIn. Mock interview from Week 20. |
+| Time Slot   | Activity                    | Details                                                                                                                                     |
+| ----------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 6:00–7:30   | **Math & Theory**           | CS229 lecture or textbook derivations. Work every proof by hand. Derive every gradient and update rule yourself on paper — never just read. |
+| 8:00–10:00  | **Coding Implementation**   | Implement the morning's theory in NumPy first, then PyTorch. Math-to-code translation must be exact. Write unit tests for every function.   |
+| 16:00–17:30 | **Problem Sets**            | deep-ml.com problems + Kaggle tabular. LeetCode medium (Weeks 1–16), then ML system design (Week 17+).                                      |
+| 20:00–21:00 | **Paper Reading + Writing** | Read one paper section (abstract + methods). Write one paragraph blog draft. Build in public from Week 4.                                   |
+| Weekend AM  | **Project Sprint**          | 4–5 hours. Build, debug, deploy. Docs only — no tutorial following. Push to GitHub.                                                         |
+| Weekend PM  | **Review & Consolidate**    | Rewrite week's derivations from memory. Update README. Record 5-min video walkthrough for LinkedIn. Mock interview from Week 20.            |
 
 **Phase-Specific Time Splits:**
+
 - **Phase 0–1:** 60% math / 30% code / 10% writing
 - **Phase 2–3:** 40% math / 50% code / 10% writing
 - **Phase 4–5:** 20% math / 50% project / 30% interview + portfolio
@@ -61,6 +64,7 @@ Weeks 49–52 │ Phase 5: Interview Prep & Portfolio Finalization
 ---
 
 ## PHASE 0: Environment & Foundations
+
 ### Weeks 1–2 · Zero tolerance for environment issues later
 
 ---
@@ -87,6 +91,7 @@ Weeks 49–52 │ Phase 5: Interview Prep & Portfolio Finalization
   - **YouTube:** Search: "WSL2 CUDA deep learning setup 2024 NVIDIA" · Jeff Heaton: "Deep Learning GPU Setup WSL2"
 
 - **How to Get Started Immediately:**
+
 ```bash
 # Step 1: Verify WSL2 sees your GPU
 nvidia-smi   # Should show RTX 4060 + CUDA version
@@ -124,9 +129,9 @@ print(f'GPU: {time.time()-t0:.3f}s')  # expect 30-100x speedup
 ```
 
 - **Outcomes:**
-  - *First Pass:* `nvidia-smi` shows RTX 4060. `torch.cuda.is_available()` returns `True`. PyTorch 2.x installed in a venv.
-  - *Second Pass:* Benchmark confirms GPU 30–100x faster. Understand memory layout. Run small neural net training loop end-to-end on GPU.
-  - *Third Pass:* Profile with `torch.profiler`. Understand CUDA memory fragmentation. Know when to use `torch.compile()` and `torch.autocast` (AMP).
+  - _First Pass:_ `nvidia-smi` shows RTX 4060. `torch.cuda.is_available()` returns `True`. PyTorch 2.x installed in a venv.
+  - _Second Pass:_ Benchmark confirms GPU 30–100x faster. Understand memory layout. Run small neural net training loop end-to-end on GPU.
+  - _Third Pass:_ Profile with `torch.profiler`. Understand CUDA memory fragmentation. Know when to use `torch.compile()` and `torch.autocast` (AMP).
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub Gist: "RTX 4060 + WSL2 CUDA 12 Setup Script (2024 Edition)" — gets bookmarked by hundreds of developers
@@ -154,6 +159,7 @@ print(f'GPU: {time.time()-t0:.3f}s')  # expect 30-100x speedup
   - **YouTube:** Search: "Python virtual environments ML projects"
 
 - **How to Get Started Immediately:**
+
 ```bash
 # Core ML stack install
 python -m venv .venv && source .venv/bin/activate
@@ -179,9 +185,9 @@ ml-project/
 ```
 
 - **Outcomes:**
-  - *First Pass:* Clean venv, all packages installed, Jupyter running with GPU dashboard.
-  - *Second Pass:* Template repo on GitHub with Makefile targets and CI badge.
-  - *Third Pass:* Dockerize the environment — prerequisite for all deployment projects.
+  - _First Pass:_ Clean venv, all packages installed, Jupyter running with GPU dashboard.
+  - _Second Pass:_ Template repo on GitHub with Makefile targets and CI badge.
+  - _Third Pass:_ Dockerize the environment — prerequisite for all deployment projects.
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub Template Repo: "ml-project-template" — reference in every future project
@@ -211,6 +217,7 @@ ml-project/
   - **Problem Sets:** [deep-ml.com/problems](https://www.deep-ml.com/problems) Linear Algebra section · [rougier/numpy-100](https://github.com/rougier/numpy-100)
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -233,9 +240,9 @@ def pairwise_l2(X):  # X: (N, D)
 ```
 
 - **Outcomes:**
-  - *First Pass:* Complete numpy-100. Implement softmax, sigmoid, cross-entropy with zero loops.
-  - *Second Pass:* Profile vectorized vs loop. Implement full feature engineering pipeline in Pandas.
-  - *Third Pass:* `numba` JIT for custom ops. Know when to hand off to PyTorch tensors.
+  - _First Pass:_ Complete numpy-100. Implement softmax, sigmoid, cross-entropy with zero loops.
+  - _Second Pass:_ Profile vectorized vs loop. Implement full feature engineering pipeline in Pandas.
+  - _Third Pass:_ `numba` JIT for custom ops. Know when to hand off to PyTorch tensors.
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub Gist: "NumPy Broadcasting Cheatsheet with Visual Diagrams"
@@ -263,6 +270,7 @@ def pairwise_l2(X):  # X: (N, D)
   - **YouTube:** Search: "GitHub Actions Python ML CI pipeline tutorial"
 
 - **How to Get Started Immediately:**
+
 ```bash
 # Commit convention (non-negotiable habit)
 git commit -m "feat: add attention mechanism to transformer block"
@@ -286,9 +294,9 @@ jobs:
 ```
 
 - **Outcomes:**
-  - *First Pass:* Template repo on GitHub with proper structure and green CI badge.
-  - *Second Pass:* Add pre-commit hooks (black, ruff). Pin dependencies with `pip-compile`.
-  - *Third Pass:* Full CD pipeline: lint → test → build Docker → push DockerHub.
+  - _First Pass:_ Template repo on GitHub with proper structure and green CI badge.
+  - _Second Pass:_ Add pre-commit hooks (black, ruff). Pin dependencies with `pip-compile`.
+  - _Third Pass:_ Full CD pipeline: lint → test → build Docker → push DockerHub.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Public GitHub Template: "ml-project-template" — link in every project
@@ -297,12 +305,14 @@ jobs:
 ---
 
 ## PHASE 1: Classical Machine Learning
+
 ### Weeks 3–14 · CS229 aligned · Mathematical derivations required
 
 ---
 
 ### Linear Regression: MLE, OLS, Gradient Descent
-*Phase 1 · Weeks 3–4 · CS229 Lec 1–2*
+
+_Phase 1 · Weeks 3–4 · CS229 Lec 1–2_
 
 - **What:** Models conditional expectation **E[y|x] = θᵀx** under Gaussian noise assumption. Cost: J(θ) = (1/2m)‖Xθ − y‖². Three solution methods: (1) Normal Equations θ = (XᵀX)⁻¹Xᵀy — O(n³), (2) Batch Gradient Descent — O(mn) per epoch, (3) Stochastic/Mini-batch GD — scalable. Probabilistic interpretation: maximizing Gaussian likelihood = minimizing MSE.
 
@@ -328,6 +338,7 @@ jobs:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Linear Regression Using Normal Equation", "Linear Regression Using Gradient Descent" · CS229 Problem Set 1
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -365,9 +376,9 @@ print("NE theta:", model.theta[1:])  # exact same
 ```
 
 - **Outcomes:**
-  - *First Pass:* Implement GD + Normal Equations. Verify against sklearn. MSE identical.
-  - *Second Pass:* Add LR scheduling (step decay). Implement SGD and mini-batch GD. Plot convergence. Verify gradient numerically with finite differences.
-  - *Third Pass:* Handle multicollinearity via Ridge. Implement locally weighted LR. Deploy house price predictor via Streamlit.
+  - _First Pass:_ Implement GD + Normal Equations. Verify against sklearn. MSE identical.
+  - _Second Pass:_ Add LR scheduling (step decay). Implement SGD and mini-batch GD. Plot convergence. Verify gradient numerically with finite differences.
+  - _Third Pass:_ Handle multicollinearity via Ridge. Implement locally weighted LR. Deploy house price predictor via Streamlit.
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub Gist: "Linear Regression from Scratch: Normal Equations, GD, Mini-batch GD with convergence plots"
@@ -377,7 +388,8 @@ print("NE theta:", model.theta[1:])  # exact same
 ---
 
 ### Logistic Regression: MLE, Cross-Entropy, Sigmoid
-*Phase 1 · Weeks 3–4 · CS229 Lec 3–5*
+
+_Phase 1 · Weeks 3–4 · CS229 Lec 3–5_
 
 - **What:** Models P(y=1|x;θ) = σ(θᵀx) where σ(z) = 1/(1+e⁻ᶻ). Loss is Binary Cross-Entropy (BCE): L = −(1/m)Σ[yᵢlog(ŷᵢ) + (1−yᵢ)log(1−ŷᵢ)], derived from maximizing Bernoulli log-likelihood. Decision boundary θᵀx = 0 is a hyperplane. Despite its name, it is a classification model.
 
@@ -402,6 +414,7 @@ print("NE theta:", model.theta[1:])  # exact same
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Logistic Regression", "Sigmoid Function", "Binary Cross-Entropy Loss" · Kaggle: "Titanic" (logistic baseline)
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -430,9 +443,9 @@ class LogisticRegression:
 ```
 
 - **Outcomes:**
-  - *First Pass:* NumPy implementation matches sklearn on Titanic. Plot decision boundary on 2D data.
-  - *Second Pass:* Implement multinomial (softmax) LR. Add L2 regularization. Verify gradient with finite differences.
-  - *Third Pass:* Handle class imbalance. Calibrate with Platt scaling. Wrap in FastAPI endpoint.
+  - _First Pass:_ NumPy implementation matches sklearn on Titanic. Plot decision boundary on 2D data.
+  - _Second Pass:_ Implement multinomial (softmax) LR. Add L2 regularization. Verify gradient with finite differences.
+  - _Third Pass:_ Handle class imbalance. Calibrate with Platt scaling. Wrap in FastAPI endpoint.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Deriving Logistic Regression: Bernoulli MLE to BCE Gradient in 6 Steps"
@@ -442,7 +455,8 @@ class LogisticRegression:
 ---
 
 ### Regularization: L1/L2/ElasticNet, Bayesian Interpretation
-*Phase 1 · Weeks 5–6*
+
+_Phase 1 · Weeks 5–6_
 
 - **What:** Adds penalty to loss to constrain model complexity. **L2 (Ridge):** J_ridge = J + λ‖θ‖₂² — shrinks all weights, never to zero. Bayesian: Gaussian prior. Closed form: θ_ridge = (XᵀX + λI)⁻¹Xᵀy. **L1 (Lasso):** J_lasso = J + λ‖θ‖₁ — promotes sparsity via non-differentiable corner at origin. Bayesian: Laplace prior. **ElasticNet:** linear combination of L1 + L2.
 
@@ -466,6 +480,7 @@ class LogisticRegression:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Ridge Regression", "Lasso Regression" · Kaggle: House Prices (Advanced)
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -486,9 +501,9 @@ for lam in [0.001, 1.0, 100.0]:
 ```
 
 - **Outcomes:**
-  - *First Pass:* Ridge closed-form. Use sklearn Ridge, Lasso, ElasticNet. Plot regularization path.
-  - *Second Pass:* Implement coordinate descent for Lasso. Cross-validate λ. Derive MAP estimation from scratch.
-  - *Third Pass:* Compare L1 sparsity on high-dimensional data. ElasticNet with cross-validated (α, λ) grid. Deploy as feature selection API.
+  - _First Pass:_ Ridge closed-form. Use sklearn Ridge, Lasso, ElasticNet. Plot regularization path.
+  - _Second Pass:_ Implement coordinate descent for Lasso. Cross-validate λ. Derive MAP estimation from scratch.
+  - _Third Pass:_ Compare L1 sparsity on high-dimensional data. ElasticNet with cross-validated (α, λ) grid. Deploy as feature selection API.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "L1 vs L2 — The Geometric Intuition That Finally Made It Click"
@@ -497,7 +512,8 @@ for lam in [0.001, 1.0, 100.0]:
 ---
 
 ### Bias-Variance Tradeoff & Cross-Validation
-*Phase 1 · Weeks 5–6 · CS229 Lec 6*
+
+_Phase 1 · Weeks 5–6 · CS229 Lec 6_
 
 - **What:** Expected test error decomposes: E[(y−ŷ)²] = Bias²[ŷ] + Var[ŷ] + σ²_noise. **Bias** = systematic error from model assumptions. **Variance** = sensitivity to training data. **Noise** σ² = irreducible. Cross-validation (k-fold, stratified, LOOCV) provides unbiased test error estimation for model selection.
 
@@ -522,6 +538,7 @@ for lam in [0.001, 1.0, 100.0]:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "K-Fold Cross-Validation", "Cross Validation Data Split" · Implement learning curves on any Kaggle dataset
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 from sklearn.model_selection import learning_curve
@@ -541,9 +558,9 @@ def plot_learning_curve(model, X, y):
 ```
 
 - **Outcomes:**
-  - *First Pass:* Generate learning curves for polynomial regression. Visually identify under/overfitting.
-  - *Second Pass:* Implement k-fold CV from scratch. Verify against sklearn. Derive LOOCV formula for linear models analytically.
-  - *Third Pass:* Implement nested cross-validation for hyperparameter tuning. Understand double descent empirically.
+  - _First Pass:_ Generate learning curves for polynomial regression. Visually identify under/overfitting.
+  - _Second Pass:_ Implement k-fold CV from scratch. Verify against sklearn. Derive LOOCV formula for linear models analytically.
+  - _Third Pass:_ Implement nested cross-validation for hyperparameter tuning. Understand double descent empirically.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "The One Plot Every ML Engineer Should Know — Learning Curves Explained"
@@ -552,7 +569,8 @@ def plot_learning_curve(model, X, y):
 ---
 
 ### Support Vector Machines & Kernel Methods
-*Phase 1 · Weeks 7–8 · CS229 Lec 9–10*
+
+_Phase 1 · Weeks 7–8 · CS229 Lec 9–10_
 
 - **What:** SVMs find the maximum-margin hyperplane: maximize 2/‖w‖ subject to yᵢ(wᵀxᵢ+b) ≥ 1. Lagrangian dual: maximize Σαᵢ − (1/2)ΣᵢΣⱼαᵢαⱼyᵢyⱼxᵢᵀxⱼ subject to αᵢ ≥ 0 and Σαᵢyᵢ = 0. The kernel trick substitutes K(xᵢ,xⱼ) = φ(xᵢ)ᵀφ(xⱼ) allowing implicit high-dimensional feature mapping. Soft-margin (C-SVM) allows slack variables ξᵢ.
 
@@ -577,6 +595,7 @@ def plot_learning_curve(model, X, y):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Support Vector Machine Training" · CS229 Problem Set 3
 
 - **How to Get Started Immediately:**
+
 ```python
 from sklearn.svm import SVC
 from sklearn.datasets import make_circles
@@ -596,9 +615,9 @@ print(f"Support vectors:     {svm_rbf.n_support_}")
 ```
 
 - **Outcomes:**
-  - *First Pass:* Use sklearn SVC. Compare linear, poly, RBF on toy datasets. Visualize decision boundaries.
-  - *Second Pass:* Implement a simplified SVM via SMO (Platt 1998). Implement RBF kernel as NumPy function.
-  - *Third Pass:* Apply to text classification with TF-IDF features. Compare vs Logistic Regression. Discuss kernel choice.
+  - _First Pass:_ Use sklearn SVC. Compare linear, poly, RBF on toy datasets. Visualize decision boundaries.
+  - _Second Pass:_ Implement a simplified SVM via SMO (Platt 1998). Implement RBF kernel as NumPy function.
+  - _Third Pass:_ Apply to text classification with TF-IDF features. Compare vs Logistic Regression. Discuss kernel choice.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "SVM Dual Derivation: From Primal QP to Kernel Trick in 8 Steps"
@@ -607,7 +626,8 @@ print(f"Support vectors:     {svm_rbf.n_support_}")
 ---
 
 ### Decision Trees: Gini Impurity, Information Gain, CART
-*Phase 1 · Weeks 9–10*
+
+_Phase 1 · Weeks 9–10_
 
 - **What:** Recursive partitioning of feature space using axis-aligned splits. CART algorithm: at each node, find feature j and threshold t minimizing a purity criterion. **Gini:** G = Σₖ pₖ(1−pₖ) = 1 − Σₖpₖ². **Entropy:** H = −Σₖ pₖ log pₖ. **Information Gain:** IG = H(parent) − Σ(|child|/|parent|)·H(child). **Regression:** minimize MSE reduction. Tree depth is the primary regularization knob.
 
@@ -631,6 +651,7 @@ print(f"Support vectors:     {svm_rbf.n_support_}")
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Decision Tree Learning", "Calculate Information Gain", "Calculate Gini Impurity"
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -659,9 +680,9 @@ print(best_split(X, y))
 ```
 
 - **Outcomes:**
-  - *First Pass:* Implement decision stump. sklearn DecisionTreeClassifier on Titanic. Visualize tree via graphviz.
-  - *Second Pass:* Full recursive CART tree with max_depth, min_samples_split. Verify against sklearn.
-  - *Third Pass:* Add cost-complexity pruning (CCP). Implement impurity-based feature importances. Deploy tree visualizer as Streamlit app.
+  - _First Pass:_ Implement decision stump. sklearn DecisionTreeClassifier on Titanic. Visualize tree via graphviz.
+  - _Second Pass:_ Full recursive CART tree with max_depth, min_samples_split. Verify against sklearn.
+  - _Third Pass:_ Add cost-complexity pruning (CCP). Implement impurity-based feature importances. Deploy tree visualizer as Streamlit app.
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub: "Decision Tree from Scratch — full CART with Streamlit visualizer"
@@ -670,7 +691,8 @@ print(best_split(X, y))
 ---
 
 ### Random Forests: Bagging, Feature Subsampling, OOB
-*Phase 1 · Weeks 9–10*
+
+_Phase 1 · Weeks 9–10_
 
 - **What:** Combines B decision trees via Bootstrap Aggregation. Each tree: trained on bootstrap sample of size N (with replacement), at each split only random √D features considered. Final prediction: majority vote or average. **OOB error:** ~37% of samples not selected per bootstrap → free cross-validation.
 
@@ -688,12 +710,13 @@ print(best_split(X, y))
 
 - **Standard Resources:**
   - **Blogs/Articles:** Search: "Random Forest OOB error derivation" · sklearn Random Forest docs
-  - **Papers:** Breiman (2001) "Random Forests" — *Machine Learning* — the original paper
+  - **Papers:** Breiman (2001) "Random Forests" — _Machine Learning_ — the original paper
   - **Books:** ESL Ch. 15 · Géron "Hands-On ML" Ch. 7
   - **YouTube:** StatQuest: "Random Forest" series
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Random Forest Classifier" · Kaggle: "Predict Future Sales" — RF baseline
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
@@ -721,9 +744,9 @@ class RandomForest:
 ```
 
 - **Outcomes:**
-  - *First Pass:* sklearn RF on Titanic. Tune n_estimators, max_depth, max_features. Plot OOB error vs n_estimators.
-  - *Second Pass:* Implement bagging from scratch with your CART tree. Add permutation importance.
-  - *Third Pass:* Apply to real Kaggle competition. Compare sklearn RF vs LightGBM. Deploy feature importance Streamlit dashboard.
+  - _First Pass:_ sklearn RF on Titanic. Tune n_estimators, max_depth, max_features. Plot OOB error vs n_estimators.
+  - _Second Pass:_ Implement bagging from scratch with your CART tree. Add permutation importance.
+  - _Third Pass:_ Apply to real Kaggle competition. Compare sklearn RF vs LightGBM. Deploy feature importance Streamlit dashboard.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Building Random Forest from Scratch: Bagging + Feature Subsampling + OOB Error"
@@ -732,9 +755,10 @@ class RandomForest:
 ---
 
 ### Gradient Boosting Machines: AdaBoost → GBDT → XGBoost → LightGBM
-*Phase 1 · Weeks 11–12 · **Highest Industry ROI***
 
-- **What:** Builds additive ensemble F_M(x) = Σₘ γₘhₘ(x) by fitting each weak learner to the **negative gradient of the loss** — functional gradient descent. **AdaBoost:** exponential loss, reweights samples. **GBDT (Friedman 2001):** any differentiable loss. **XGBoost:** second-order Taylor expansion, L1/L2 tree regularization, column subsampling. Optimal leaf weight: **w_j* = −G_j / (H_j + λ)** where G_j = Σgᵢ, H_j = Σhᵢ. **LightGBM:** leaf-wise growth + histogram binning → 10–100x speedup. **CatBoost:** ordered boosting for categoricals.
+\*Phase 1 · Weeks 11–12 · **Highest Industry ROI\***
+
+- **What:** Builds additive ensemble F_M(x) = Σₘ γₘhₘ(x) by fitting each weak learner to the **negative gradient of the loss** — functional gradient descent. **AdaBoost:** exponential loss, reweights samples. **GBDT (Friedman 2001):** any differentiable loss. **XGBoost:** second-order Taylor expansion, L1/L2 tree regularization, column subsampling. Optimal leaf weight: **w_j\* = −G_j / (H_j + λ)** where G_j = Σgᵢ, H_j = Σhᵢ. **LightGBM:** leaf-wise growth + histogram binning → 10–100x speedup. **CatBoost:** ordered boosting for categoricals.
 
 - **Why:** XGBoost/LightGBM wins 60–80% of Kaggle tabular competitions. In production: every fraud detection, search ranking, and CTR prediction system at FAANG uses gradient boosting. An ML intern who can tune LightGBM, engineer features, and interpret SHAP values is immediately productive on day one.
 
@@ -743,7 +767,7 @@ class RandomForest:
 - **What Questions to Ask:**
   - Derive the GBDT update step. Show that fitting trees to residuals (MSE) is a special case.
   - Write XGBoost objective: L⁽ᵗ⁾ = Σl(yᵢ, ŷᵢ⁽ᵗ⁾) + Ω(fₜ). Derive second-order Taylor expansion.
-  - Derive optimal leaf weight w_j* = −G_j / (H_j + λ) by setting ∂L/∂w_j = 0.
+  - Derive optimal leaf weight w_j\* = −G_j / (H_j + λ) by setting ∂L/∂w_j = 0.
   - What is the gain formula for a split in XGBoost? What do λ (L2) and γ (min gain) control?
   - Why is LightGBM's leaf-wise growth faster but riskier? What prevents overfitting?
   - What is SHAP and how does it unify feature importance?
@@ -758,6 +782,7 @@ class RandomForest:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Gradient Boosting Regression" · Kaggle: "Porto Seguro Safe Driver Prediction" · Kaggle: "House Prices Advanced"
 
 - **How to Get Started Immediately:**
+
 ```python
 import lightgbm as lgb
 import xgboost as xgb
@@ -790,9 +815,9 @@ shap.summary_plot(shap_vals[1], X_val, feature_names=load_breast_cancer().featur
 > **Key Math:** XGBoost Gain = (1/2)[G_L²/(H_L+λ) + G_R²/(H_R+λ) − (G_L+G_R)²/(H_L+H_R+λ)] − γ
 
 - **Outcomes:**
-  - *First Pass:* Working LightGBM + XGBoost pipelines. SHAP summary plots. Top 20% on a Kaggle tabular comp.
-  - *Second Pass:* Implement GBDT from scratch with CART tree. Verify on MSE loss. Early stopping manually.
-  - *Third Pass:* Optuna hyperparameter tuning. Feature engineering pipeline (target encoding, interactions). FastAPI endpoint with SHAP explanations in response.
+  - _First Pass:_ Working LightGBM + XGBoost pipelines. SHAP summary plots. Top 20% on a Kaggle tabular comp.
+  - _Second Pass:_ Implement GBDT from scratch with CART tree. Verify on MSE loss. Early stopping manually.
+  - _Third Pass:_ Optuna hyperparameter tuning. Feature engineering pipeline (target encoding, interactions). FastAPI endpoint with SHAP explanations in response.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "XGBoost Optimal Leaf Weight: The Math Behind the Most Powerful Tree Model"
@@ -803,7 +828,8 @@ shap.summary_plot(shap_vals[1], X_val, feature_names=load_breast_cancer().featur
 ---
 
 ### Clustering: K-Means, DBSCAN, Gaussian Mixture Models
-*Phase 1 · Weeks 13–14 · CS229 Lec 13*
+
+_Phase 1 · Weeks 13–14 · CS229 Lec 13_
 
 - **What:** **K-Means (Lloyd's):** minimize J = ΣₖΣᵢ∈Cₖ ‖xᵢ−μₖ‖². E-step: assign to nearest centroid. M-step: update centroids. Converges monotonically, finds local minimum. **DBSCAN:** density-based — core points (≥MinPts in ε-ball), border, noise. No k required. **GMM (EM):** soft assignments via posterior P(zₖ|xᵢ) ∝ πₖN(xᵢ;μₖ,Σₖ). E-step: compute responsibilities. M-step: update πₖ, μₖ, Σₖ. K-Means = special case of GMM (isotropic equal covariance).
 
@@ -827,6 +853,7 @@ shap.summary_plot(shap_vals[1], X_val, feature_names=load_breast_cancer().featur
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "K-Means Clustering", "Implement K-Means Clustering from Scratch"
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -855,9 +882,9 @@ class KMeans:
 ```
 
 - **Outcomes:**
-  - *First Pass:* K-Means from scratch. Plot Elbow curve. DBSCAN on crescent moons. sklearn GMM on Old Faithful.
-  - *Second Pass:* Full GMM EM (E: responsibilities, M: update μ, Σ, π). Verify log-likelihood increases monotonically.
-  - *Third Pass:* Apply to customer segmentation on real e-commerce data. Deploy Streamlit dashboard with cluster visualization.
+  - _First Pass:_ K-Means from scratch. Plot Elbow curve. DBSCAN on crescent moons. sklearn GMM on Old Faithful.
+  - _Second Pass:_ Full GMM EM (E: responsibilities, M: update μ, Σ, π). Verify log-likelihood increases monotonically.
+  - _Third Pass:_ Apply to customer segmentation on real e-commerce data. Deploy Streamlit dashboard with cluster visualization.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Deriving the EM Algorithm: From Jensen's Inequality to Gaussian Mixture Models"
@@ -866,7 +893,8 @@ class KMeans:
 ---
 
 ### PCA: Eigendecomposition, SVD, Explained Variance
-*Phase 1 · Weeks 13–14 · CS229 Lec 14*
+
+_Phase 1 · Weeks 13–14 · CS229 Lec 14_
 
 - **What:** Finds orthogonal directions of maximum variance. k-th PC = k-th eigenvector of covariance matrix S = (1/n)XᵀX (after centering). Via SVD: X = UΣVᵀ — columns of V are principal directions, σᵢ²/n are eigenvalues. Projection: Z = XV_k (n×k). Explained variance ratio: σᵢ² / Σⱼσⱼ².
 
@@ -889,6 +917,7 @@ class KMeans:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "PCA Implementation", "Covariance Matrix", "SVD" · Apply PCA to MNIST: visualize top-2 PCs, reconstruct from k PCs
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -912,9 +941,9 @@ print(np.allclose(np.abs(Z_eig), np.abs(Z_svd)))  # True
 ```
 
 - **Outcomes:**
-  - *First Pass:* PCA from eigen-decomposition. Verify against sklearn. Visualize MNIST in 2D. Plot scree plot.
-  - *Second Pass:* Incremental PCA for large datasets. Kernel PCA with RBF. Prove SVD-PCA equivalence mathematically.
-  - *Third Pass:* Apply to text data (TF-IDF → PCA → KNN). Compare PCA, t-SNE, UMAP. Deploy as dimensionality reduction API.
+  - _First Pass:_ PCA from eigen-decomposition. Verify against sklearn. Visualize MNIST in 2D. Plot scree plot.
+  - _Second Pass:_ Incremental PCA for large datasets. Kernel PCA with RBF. Prove SVD-PCA equivalence mathematically.
+  - _Third Pass:_ Apply to text data (TF-IDF → PCA → KNN). Compare PCA, t-SNE, UMAP. Deploy as dimensionality reduction API.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "PCA from Scratch: Covariance Matrix to SVD Equivalence"
@@ -923,7 +952,8 @@ print(np.allclose(np.abs(Z_eig), np.abs(Z_svd)))  # True
 ---
 
 ### Model Evaluation, Metrics & Calibration
-*Phase 1 · Weeks 13–14 · Critical for All Production Systems*
+
+_Phase 1 · Weeks 13–14 · Critical for All Production Systems_
 
 - **What:** Classification: Precision = TP/(TP+FP), Recall = TP/(TP+FN), F1 = 2PR/(P+R). **ROC-AUC** = P(score(pos) > score(neg)) — threshold-agnostic ranking metric. **PR-AUC** for imbalanced datasets. **Calibration:** P̂(y=1|x) = P(y=1|x) — Reliability diagrams, Brier score, Platt scaling, isotonic regression. Regression: MAE, RMSE, MAPE, R². Multiclass: macro/micro/weighted F1.
 
@@ -948,6 +978,7 @@ print(np.allclose(np.abs(Z_eig), np.abs(Z_svd)))  # True
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Calculate F1 Score", "Confusion Matrix", "ROC-AUC" · Implement ROC curve from scratch
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -969,9 +1000,9 @@ print(f"AUC (sklearn): {roc_auc_score(y, s):.4f}")  # must match
 ```
 
 - **Outcomes:**
-  - *First Pass:* Implement all metrics from scratch. Apply to fraud detection dataset.
-  - *Second Pass:* Calibration curves, Platt scaling, isotonic regression. Optimal threshold via cost-sensitive analysis.
-  - *Third Pass:* Streamlit dashboard auto-generating all classification metrics + calibration plots for any sklearn model.
+  - _First Pass:_ Implement all metrics from scratch. Apply to fraud detection dataset.
+  - _Second Pass:_ Calibration curves, Platt scaling, isotonic regression. Optimal threshold via cost-sensitive analysis.
+  - _Third Pass:_ Streamlit dashboard auto-generating all classification metrics + calibration plots for any sklearn model.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Choosing the Right ML Metric: A Decision Tree for Classification Problems"
@@ -980,12 +1011,14 @@ print(f"AUC (sklearn): {roc_auc_score(y, s):.4f}")  # must match
 ---
 
 ## PHASE 1.5: Deployment Basics
+
 ### Weeks 15–16 · Every project from here must be deployed
 
 ---
 
 ### Streamlit: Rapid ML Web Apps & Interactive Dashboards
-*Phase 1.5 · Week 15*
+
+_Phase 1.5 · Week 15_
 
 - **What:** Python-native framework converting Python scripts to interactive web apps with zero HTML/CSS/JS. Widgets (`st.slider`, `st.file_uploader`, `st.dataframe`) are Python function calls. Execution model: re-runs entire script on widget interaction. State via `st.session_state`. `@st.cache_data` and `@st.cache_resource` prevent unnecessary recomputation.
 
@@ -1004,6 +1037,7 @@ print(f"AUC (sklearn): {roc_auc_score(y, s):.4f}")  # must match
   - **YouTube:** Patrick Loeber: "Streamlit for ML" playlist · Search: "Streamlit SHAP dashboard tutorial"
 
 - **How to Get Started Immediately:**
+
 ```python
 # pip install streamlit shap lightgbm
 # Run: streamlit run app.py
@@ -1037,9 +1071,9 @@ st.metric("Training Accuracy", f"{model.score(X, __import__('sklearn.datasets', 
 ```
 
 - **Outcomes:**
-  - *First Pass:* Deploy Phase 1 ML models (LightGBM + SHAP) on Hugging Face Spaces. Public URL on resume.
-  - *Second Pass:* Multi-page Streamlit app: EDA page, training page, evaluation metrics page, SHAP explanation page.
-  - *Third Pass:* Streamlit frontend + FastAPI backend. Decouple inference from UI.
+  - _First Pass:_ Deploy Phase 1 ML models (LightGBM + SHAP) on Hugging Face Spaces. Public URL on resume.
+  - _Second Pass:_ Multi-page Streamlit app: EDA page, training page, evaluation metrics page, SHAP explanation page.
+  - _Third Pass:_ Streamlit frontend + FastAPI backend. Decouple inference from UI.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Deployed App: "Universal ML Explainability Dashboard" on HuggingFace Spaces — URL on every application
@@ -1048,7 +1082,8 @@ st.metric("Training Accuracy", f"{model.score(X, __import__('sklearn.datasets', 
 ---
 
 ### FastAPI: Production ML Inference APIs
-*Phase 1.5 · Week 16*
+
+_Phase 1.5 · Week 16_
 
 - **What:** ASGI async web framework on Starlette + Pydantic. Auto-generates OpenAPI/Swagger docs. Validates request/response schemas via Pydantic models. Supports async route handlers for concurrent inference. ML pattern: load model at startup via `lifespan` context manager, expose `/predict` endpoint, validate input, run inference, return prediction + metadata.
 
@@ -1068,6 +1103,7 @@ st.metric("Training Accuracy", f"{model.score(X, __import__('sklearn.datasets', 
   - **YouTube:** ArjanCodes: "FastAPI Tutorial" series · Search: "FastAPI LightGBM inference production"
 
 - **How to Get Started Immediately:**
+
 ```python
 # pip install fastapi uvicorn[standard] pydantic joblib
 
@@ -1112,9 +1148,9 @@ async def predict(req: PredictRequest):
 ```
 
 - **Outcomes:**
-  - *First Pass:* LightGBM wrapped in FastAPI. Pydantic schemas. Tested via /docs. Deployed on Render/Railway (free).
-  - *Second Pass:* Add background tasks, logging middleware, error handling, health check, model versioning.
-  - *Third Pass:* Containerize with Docker. Add Prometheus metrics. Deploy on VPS with nginx. This is your Phase 1 capstone.
+  - _First Pass:_ LightGBM wrapped in FastAPI. Pydantic schemas. Tested via /docs. Deployed on Render/Railway (free).
+  - _Second Pass:_ Add background tasks, logging middleware, error handling, health check, model versioning.
+  - _Third Pass:_ Containerize with Docker. Add Prometheus metrics. Deploy on VPS with nginx. This is your Phase 1 capstone.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Serving ML Models with FastAPI: Jupyter Notebook to Production API in 1 Hour"
@@ -1123,12 +1159,14 @@ async def predict(req: PredictRequest):
 ---
 
 ## PHASE 2: Deep Learning — From Autograd to PyTorch
+
 ### Weeks 17–30 · Build TinyTorch. Understand every gradient. Master PyTorch.
 
 ---
 
 ### Neural Networks: Universal Approximation, Activations, Forward Pass
-*Phase 2 · Weeks 17–18*
+
+_Phase 2 · Weeks 17–18_
 
 - **What:** Feedforward NN: f(x;W) = σₙ(Wₙ·σₙ₋₁(...σ₁(W₁x+b₁)...)+bₙ). **Universal Approximation Theorem** (Hornik 1989): single hidden layer with sufficient width approximates any continuous function on compact ℝⁿ subset. Activations: **ReLU**(z) = max(0,z) — sparse, no vanishing gradient for z>0. **Sigmoid** — saturates (vanishing gradient). **Tanh** — zero-centered. **GELU**(x) = x·Φ(x) — smooth ReLU using Gaussian CDF, used in GPT/BERT.
 
@@ -1152,6 +1190,7 @@ async def predict(req: PredictRequest):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Single Neuron", "Softmax Activation", "ReLU Activation"
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 from scipy.special import erf
@@ -1177,9 +1216,9 @@ print([x.shape, a1.shape, a2.shape, logits.shape])
 ```
 
 - **Outcomes:**
-  - *First Pass:* All activations + forward pass in NumPy. Compare Xavier vs He initialization: measure activation variance collapse.
-  - *Second Pass:* Compare activation distributions at each layer. Plot dead neuron fraction with sigmoid.
-  - *Third Pass:* Begin TinyTorch — implement Tensor class with value + grad storage as first step.
+  - _First Pass:_ All activations + forward pass in NumPy. Compare Xavier vs He initialization: measure activation variance collapse.
+  - _Second Pass:_ Compare activation distributions at each layer. Plot dead neuron fraction with sigmoid.
+  - _Third Pass:_ Begin TinyTorch — implement Tensor class with value + grad storage as first step.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Why ReLU Beats Sigmoid: Vanishing Gradients Visualized Mathematically"
@@ -1188,7 +1227,8 @@ print([x.shape, a1.shape, a2.shape, logits.shape])
 ---
 
 ### Backpropagation: Computational Graphs & Chain Rule
-*Phase 2 · Weeks 19–20*
+
+_Phase 2 · Weeks 19–20_
 
 - **What:** Backpropagation applies the chain rule on a directed acyclic computational graph (DAG). Every operation is a node; edges carry partial derivatives. Backward pass computes ∂L/∂wᵢ for all weights via dynamic programming — sharing intermediate results. Cost = O(forward pass). Key derivation: for softmax + cross-entropy, ∂L/∂zᵢ = pᵢ − yᵢ — one of the most elegant results in ML.
 
@@ -1213,6 +1253,7 @@ print([x.shape, a1.shape, a2.shape, logits.shape])
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Single Neuron with Backpropagation", "Backpropagation Gradient" · Implement numerical gradient check for all operations
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -1242,9 +1283,9 @@ print(f"Max grad error: {np.abs(analytical - numerical).max():.2e}")
 ```
 
 - **Outcomes:**
-  - *First Pass:* Implement forward + backward for linear layer, ReLU, sigmoid, softmax+CE. Verify all gradients numerically.
-  - *Second Pass:* Full MLP backward pass. Train on MNIST from scratch in NumPy. Achieve >95% accuracy.
-  - *Third Pass:* Begin TinyTorch Value class. Build the topological sort + backward traversal engine.
+  - _First Pass:_ Implement forward + backward for linear layer, ReLU, sigmoid, softmax+CE. Verify all gradients numerically.
+  - _Second Pass:_ Full MLP backward pass. Train on MNIST from scratch in NumPy. Achieve >95% accuracy.
+  - _Third Pass:_ Begin TinyTorch Value class. Build the topological sort + backward traversal engine.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Softmax + Cross-Entropy Backward Pass: The Derivation Every ML Engineer Should Know"
@@ -1253,7 +1294,8 @@ print(f"Max grad error: {np.abs(analytical - numerical).max():.2e}")
 ---
 
 ### TinyTorch: Build Your Own Autograd Engine from Scratch
-*Phase 2 · Weeks 20–22 · mlsysbook.ai/tinytorch · **Spine of Your Portfolio***
+
+\*Phase 2 · Weeks 20–22 · mlsysbook.ai/tinytorch · **Spine of Your Portfolio\***
 
 - **What:** TinyTorch (from [mlsysbook.ai/tinytorch](https://mlsysbook.ai/tinytorch/)) is a step-by-step project to build a minimal deep learning framework: (1) **Tensor class** with NumPy backend, (2) **Autograd engine** — computation DAG, topological sort, backward traversal, (3) **Module system** — Linear, ReLU, Loss, (4) **Optimizers** — SGD then Adam, (5) **DataLoader** — batching + shuffling, (6) Optional: CUDA matmul kernel via CuPy. Reference: Karpathy's micrograd extended to tensors.
 
@@ -1277,6 +1319,7 @@ print(f"Max grad error: {np.abs(analytical - numerical).max():.2e}")
   - **YouTube:** Karpathy: "Building micrograd from scratch" (2h) — **mandatory** · Search: "PyTorch autograd internals Edward Yang"
 
 - **How to Get Started Immediately:**
+
 ```python
 # TinyTorch Phase 1: Scalar Value with Autograd
 # (Extend to Tensor over next 2 weeks)
@@ -1336,14 +1379,14 @@ print(f"dz/dy={y.grad} (expected 4.0)")   # 3+1=4.0
 **TinyTorch Milestones:**
 | Week | Milestone |
 |---|---|
-| Week 20 | Scalar Value: +, *, **, relu, exp, log. Topological sort. Numerical gradient verification. |
+| Week 20 | Scalar Value: +, \*, \*\*, relu, exp, log. Topological sort. Numerical gradient verification. |
 | Week 21 | Tensor class (NumPy backend). matmul, sum, mean, reshape. Module base class + Linear layer. Train XOR. |
 | Week 22 | SGD + Adam optimizers. DataLoader. Train MLP on MNIST. Compare speed with equivalent PyTorch model. |
 
 - **Outcomes:**
-  - *First Pass:* Scalar Value with +, *, relu, exp, log. Topo sort backward. Numerically verify all gradients. Match micrograd.
-  - *Second Pass:* Tensor class. Module + Linear. SGD optimizer. Train MNIST to >97% accuracy.
-  - *Third Pass:* Adam optimizer. DataLoader. LayerNorm. Document all design decisions. Add CuPy CUDA backend (optional).
+  - _First Pass:_ Scalar Value with +, \*, relu, exp, log. Topo sort backward. Numerically verify all gradients. Match micrograd.
+  - _Second Pass:_ Tensor class. Module + Linear. SGD optimizer. Train MNIST to >97% accuracy.
+  - _Third Pass:_ Adam optimizer. DataLoader. LayerNorm. Document all design decisions. Add CuPy CUDA backend (optional).
 
 - **What I Can Learn From It & Resources to Generate:**
   - **GitHub Repo:** "TinyTorch — A Minimal Deep Learning Framework from Scratch" — detailed README + architecture diagram — your **#1 portfolio project**
@@ -1354,7 +1397,8 @@ print(f"dz/dy={y.grad} (expected 4.0)")   # 3+1=4.0
 ---
 
 ### PyTorch: nn.Module, DataLoaders, Training Loops, GPU Training
-*Phase 2 · Weeks 23–24*
+
+_Phase 2 · Weeks 23–24_
 
 - **What:** PyTorch core: `torch.Tensor` (ND array + autograd), `nn.Module` (model definition + parameter registration), `nn.functional` (stateless ops), `DataLoader` (batching + parallel loading), `torch.optim` (gradient optimizers), `torch.cuda` (device management). Canonical training loop: forward → loss → backward → optimizer.step → zero_grad. AMP: `torch.autocast` for mixed precision on RTX 4060.
 
@@ -1379,6 +1423,7 @@ print(f"dz/dy={y.grad} (expected 4.0)")   # 3+1=4.0
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Create a Simple Neural Network" · Train MLP on MNIST to 99%+ — benchmark vs TinyTorch
 
 - **How to Get Started Immediately:**
+
 ```python
 import torch, torch.nn as nn
 from torch.utils.data import DataLoader
@@ -1418,9 +1463,9 @@ def train_epoch(model, loader, optimizer, criterion):
 ```
 
 - **Outcomes:**
-  - *First Pass:* Train MLP on MNIST to 99%+ on GPU. Understand all training loop steps. Plot loss curves.
-  - *Second Pass:* Add wandb/TensorBoard logging. Checkpoint saving/loading. AMP for faster training.
-  - *Third Pass:* `torch.compile()` on your model. Profile with `torch.profiler`. Add gradient accumulation.
+  - _First Pass:_ Train MLP on MNIST to 99%+ on GPU. Understand all training loop steps. Plot loss curves.
+  - _Second Pass:_ Add wandb/TensorBoard logging. Checkpoint saving/loading. AMP for faster training.
+  - _Third Pass:_ `torch.compile()` on your model. Profile with `torch.profiler`. Add gradient accumulation.
 
 - **What I Can Learn From It & Resources to Generate:**
   - GitHub: "PyTorch Training Loop Template — production-ready with AMP, wandb, checkpointing, early stopping"
@@ -1429,7 +1474,8 @@ def train_epoch(model, loader, optimizer, criterion):
 ---
 
 ### Optimization: SGD → Momentum → RMSProp → Adam → AdamW
-*Phase 2 · Weeks 25–26*
+
+_Phase 2 · Weeks 25–26_
 
 - **What:** **SGD:** θ ← θ − α∇L. **Momentum:** v ← βv + ∇L; θ ← θ − αv. **RMSProp:** E[g²] ← ρE[g²] + (1−ρ)g²; θ ← θ − αg/√(E[g²]+ε). **Adam:** combines momentum + RMSProp with bias correction: m̂ = m/(1−β₁ᵗ), v̂ = v/(1−β₂ᵗ), θ ← θ − αm̂/(√v̂+ε). **AdamW:** decouples L2 weight decay from gradient rescaling — mathematically correct form. LR schedules: cosine annealing, linear warmup + cosine (standard for transformers).
 
@@ -1454,6 +1500,7 @@ def train_epoch(model, loader, optimizer, criterion):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Implement Adam Optimizer", "Mini-Batch Gradient Descent" · Add all optimizers to TinyTorch
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -1480,9 +1527,9 @@ class AdamW:
 ```
 
 - **Outcomes:**
-  - *First Pass:* Add Adam + AdamW to TinyTorch. Compare SGD, Adam, AdamW convergence on toy problem.
-  - *Second Pass:* Implement cosine annealing + linear warmup scheduler. Add gradient clipping. Verify bias correction.
-  - *Third Pass:* Implement Lion optimizer (2023, Google). Compare on NLP task.
+  - _First Pass:_ Add Adam + AdamW to TinyTorch. Compare SGD, Adam, AdamW convergence on toy problem.
+  - _Second Pass:_ Implement cosine annealing + linear warmup scheduler. Add gradient clipping. Verify bias correction.
+  - _Third Pass:_ Implement Lion optimizer (2023, Google). Compare on NLP task.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Why Adam's Weight Decay is Wrong — and How AdamW Fixes It (with proofs)"
@@ -1491,7 +1538,8 @@ class AdamW:
 ---
 
 ### Dropout, Batch Norm, Layer Norm — The DL Regularization Toolkit
-*Phase 2 · Weeks 27–28*
+
+_Phase 2 · Weeks 27–28_
 
 - **What:** **Dropout:** set each activation to 0 with probability p during training; scale survivors by 1/(1−p) (inverted dropout). At inference: all neurons active. **Batch Normalization:** BN(x) = γ·(x−μ_B)/σ_B + β, normalized per mini-batch. Reduces internal covariate shift. **Layer Normalization:** normalize across feature dimension (not batch) — batch-size-independent, preferred in transformers. **RMSNorm:** LN without mean subtraction — used in LLaMA.
 
@@ -1515,6 +1563,7 @@ class AdamW:
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Batch Normalization", "Dropout Regularization" · Add LayerNorm to TinyTorch
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -1541,9 +1590,9 @@ print(np.allclose(ln_np, ln_pt.detach().numpy(), atol=1e-5))  # True
 ```
 
 - **Outcomes:**
-  - *First Pass:* Implement Dropout + BN in NumPy (forward+backward). Add LayerNorm to TinyTorch.
-  - *Second Pass:* Derive BN backward pass from scratch. Implement Pre-LN vs Post-LN transformer blocks. Compare stability.
-  - *Third Pass:* Implement RMSNorm (LLaMA). Compare LN vs RMSNorm computational cost.
+  - _First Pass:_ Implement Dropout + BN in NumPy (forward+backward). Add LayerNorm to TinyTorch.
+  - _Second Pass:_ Derive BN backward pass from scratch. Implement Pre-LN vs Post-LN transformer blocks. Compare stability.
+  - _Third Pass:_ Implement RMSNorm (LLaMA). Compare LN vs RMSNorm computational cost.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "BatchNorm vs LayerNorm — The Complete Derivation and When to Use Each"
@@ -1552,7 +1601,8 @@ print(np.allclose(ln_np, ln_pt.detach().numpy(), atol=1e-5))  # True
 ---
 
 ### RNNs, LSTMs, GRUs: Sequential Processing & BPTT
-*Phase 2 · Weeks 29–30*
+
+_Phase 2 · Weeks 29–30_
 
 - **What:** **RNN:** hₜ = tanh(Wₕhₜ₋₁ + Wₓxₜ + b). **BPTT:** unroll T steps, sum gradients — suffers vanishing/exploding gradients when ‖∂hₜ/∂hₜ₋₁‖ < 1 repeatedly. **LSTM:** forget gate fₜ = σ(Wf[hₜ₋₁,xₜ]), input gate iₜ, output gate oₜ, cell Cₜ = fₜ⊙Cₜ₋₁ + iₜ⊙C̃ₜ. Cell state = gradient highway (constant error carousel). **GRU:** merged forget+input into update gate — fewer parameters, comparable performance.
 
@@ -1576,6 +1626,7 @@ print(np.allclose(ln_np, ln_pt.detach().numpy(), atol=1e-5))  # True
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Implementing a Simple RNN" · Train char-level LM on Shakespeare dataset
 
 - **How to Get Started Immediately:**
+
 ```python
 import torch, torch.nn as nn
 
@@ -1601,9 +1652,9 @@ class CharLSTM(nn.Module):
 ```
 
 - **Outcomes:**
-  - *First Pass:* PyTorch LSTM char-level LM on Shakespeare. Generate text. Understand hidden state dimensions.
-  - *Second Pass:* Implement vanilla RNN + BPTT in NumPy. Verify gradients numerically. Observe vanishing gradient magnitude.
-  - *Third Pass:* Add attention mechanism to LSTM encoder-decoder. This is the conceptual bridge to transformers.
+  - _First Pass:_ PyTorch LSTM char-level LM on Shakespeare. Generate text. Understand hidden state dimensions.
+  - _Second Pass:_ Implement vanilla RNN + BPTT in NumPy. Verify gradients numerically. Observe vanishing gradient magnitude.
+  - _Third Pass:_ Add attention mechanism to LSTM encoder-decoder. This is the conceptual bridge to transformers.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "LSTM from Scratch: Deriving All 4 Gates and the Constant Error Carousel"
@@ -1613,12 +1664,14 @@ class CharLSTM(nn.Module):
 ---
 
 ## PHASE 3: NLP & Transformers
+
 ### Weeks 31–40 · The core of modern ML engineering
 
 ---
 
 ### Word Embeddings: Word2Vec, GloVe, FastText
-*Phase 3 · Weeks 31–32*
+
+_Phase 3 · Weeks 31–32_
 
 - **What:** Dense vector representations of words in continuous space such that semantic similarity ≈ geometric proximity. **Word2Vec (Mikolov 2013):** CBOW (predict center from context) and Skip-gram (predict context from center), trained via negative sampling. Objective: maximize log P(wₒ|wᵢ) = log σ(vₒᵀvᵢ) + Σₖ log σ(−vₖᵀvᵢ). **GloVe:** factorizes global co-occurrence matrix. **FastText:** subword embeddings (handles OOV). Properties: "king − man + woman ≈ queen" via vector arithmetic.
 
@@ -1642,6 +1695,7 @@ class CharLSTM(nn.Module):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Cosine Similarity" · Implement Word2Vec Skip-gram + negative sampling in PyTorch from scratch
 
 - **How to Get Started Immediately:**
+
 ```python
 import torch, torch.nn as nn
 
@@ -1675,9 +1729,9 @@ class SkipGram(nn.Module):
 ```
 
 - **Outcomes:**
-  - *First Pass:* Load pre-trained GloVe/FastText embeddings via `gensim`. Compute word analogies. Visualize with t-SNE.
-  - *Second Pass:* Train Word2Vec Skip-gram from scratch in PyTorch on a text corpus. Verify "king−man+woman≈queen".
-  - *Third Pass:* Use embeddings as features for a downstream classification task. Compare pre-trained vs trained-from-scratch embeddings.
+  - _First Pass:_ Load pre-trained GloVe/FastText embeddings via `gensim`. Compute word analogies. Visualize with t-SNE.
+  - _Second Pass:_ Train Word2Vec Skip-gram from scratch in PyTorch on a text corpus. Verify "king−man+woman≈queen".
+  - _Third Pass:_ Use embeddings as features for a downstream classification task. Compare pre-trained vs trained-from-scratch embeddings.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Word2Vec from Scratch: Deriving Skip-gram with Negative Sampling"
@@ -1686,7 +1740,8 @@ class SkipGram(nn.Module):
 ---
 
 ### Attention Mechanism: Scaled Dot-Product & Multi-Head Attention
-*Phase 3 · Weeks 33–34*
+
+_Phase 3 · Weeks 33–34_
 
 - **What:** **Scaled Dot-Product Attention:** Attention(Q,K,V) = softmax(QKᵀ/√dₖ)V. Q (query), K (key), V (value) are linear projections of input. Scaling by √dₖ prevents softmax saturation for large dₖ. **Multi-Head Attention:** run h attention heads in parallel on projected subspaces, concatenate and project: MHA(Q,K,V) = Concat(head₁,...,headₕ)Wᵒ where headᵢ = Attention(QWᵢQ, KWᵢK, VWᵢV). Complexity: O(n²d) in sequence length n — the quadratic bottleneck.
 
@@ -1711,6 +1766,7 @@ class SkipGram(nn.Module):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Self-Attention Mechanism", "Scaled Dot-Product Attention" · Implement MHA from scratch and verify shapes
 
 - **How to Get Started Immediately:**
+
 ```python
 import numpy as np
 
@@ -1744,9 +1800,9 @@ print(out.shape)  # (2, 10, 64)
 ```
 
 - **Outcomes:**
-  - *First Pass:* Scaled dot-product attention in NumPy. Add causal mask. Verify output shapes.
-  - *Second Pass:* Implement Multi-Head Attention module in PyTorch. Compare with `nn.MultiheadAttention` on identical inputs.
-  - *Third Pass:* Add attention to TinyTorch. Visualize attention weights on a toy sequence-to-sequence task.
+  - _First Pass:_ Scaled dot-product attention in NumPy. Add causal mask. Verify output shapes.
+  - _Second Pass:_ Implement Multi-Head Attention module in PyTorch. Compare with `nn.MultiheadAttention` on identical inputs.
+  - _Third Pass:_ Add attention to TinyTorch. Visualize attention weights on a toy sequence-to-sequence task.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Scaled Dot-Product Attention: Why √dₖ Scaling Matters (with derivation)"
@@ -1756,7 +1812,8 @@ print(out.shape)  # (2, 10, 64)
 ---
 
 ### Transformer Architecture: Encoder, Decoder, Full Stack
-*Phase 3 · Weeks 35–36*
+
+_Phase 3 · Weeks 35–36_
 
 - **What:** Full transformer stack from "Attention Is All You Need" (Vaswani et al. 2017). **Encoder block:** Input Embedding + Positional Encoding → [Multi-Head Self-Attention → Add & Norm → FFN → Add & Norm] × N. **Decoder block:** adds cross-attention layer between self-attention and FFN, with causal masking on self-attention. **FFN:** two linear transformations with ReLU: FFN(x) = max(0, xW₁+b₁)W₂+b₂. **Positional Encoding:** PE(pos, 2i) = sin(pos/10000^(2i/d)), PE(pos,2i+1) = cos(pos/10000^(2i/d)).
 
@@ -1781,6 +1838,7 @@ print(out.shape)  # (2, 10, 64)
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems): "Transformer Architecture", "Positional Encoding" · Implement full encoder-decoder transformer and train on toy translation task
 
 - **How to Get Started Immediately:**
+
 ```python
 import torch, torch.nn as nn, math
 
@@ -1822,9 +1880,9 @@ class PositionalEncoding(nn.Module):
 ```
 
 - **Outcomes:**
-  - *First Pass:* Read "Attention Is All You Need" and "The Illustrated Transformer." Implement PositionalEncoding and TransformerEncoderBlock in PyTorch.
-  - *Second Pass:* Build mini-GPT (decoder-only) following Karpathy's tutorial. Train on Shakespeare (~1M chars). Generate text.
-  - *Third Pass:* Add to TinyTorch: MHA module + transformer block. Train a character-level transformer from TinyTorch.
+  - _First Pass:_ Read "Attention Is All You Need" and "The Illustrated Transformer." Implement PositionalEncoding and TransformerEncoderBlock in PyTorch.
+  - _Second Pass:_ Build mini-GPT (decoder-only) following Karpathy's tutorial. Train on Shakespeare (~1M chars). Generate text.
+  - _Third Pass:_ Add to TinyTorch: MHA module + transformer block. Train a character-level transformer from TinyTorch.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Building a Transformer from Scratch: Every Design Choice Explained"
@@ -1834,7 +1892,8 @@ class PositionalEncoding(nn.Module):
 ---
 
 ### BERT & Encoder Models: Pretraining, MLM, NSP
-*Phase 3 · Weeks 37–38*
+
+_Phase 3 · Weeks 37–38_
 
 - **What:** BERT (Devlin et al. 2019): bidirectional transformer encoder pretrained on (1) **MLM (Masked Language Modeling):** randomly mask 15% of tokens, predict masked tokens from bidirectional context — unlike GPT's causal left-to-right. (2) **NSP (Next Sentence Prediction):** predict if sentence B follows sentence A. Fine-tuning: add task-specific head on top of `[CLS]` token representation. BERT-base: 12 layers, 12 heads, d_model=768, 110M params.
 
@@ -1859,6 +1918,7 @@ class PositionalEncoding(nn.Module):
   - **Problem Sets:** [deep-ml.com](https://www.deep-ml.com/problems) · Fine-tune BERT on: (1) SST-2 sentiment, (2) CoNLL-2003 NER, (3) SQuAD QA
 
 - **How to Get Started Immediately:**
+
 ```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from datasets import load_dataset
@@ -1895,9 +1955,9 @@ scheduler   = get_linear_schedule_with_warmup(
 ```
 
 - **Outcomes:**
-  - *First Pass:* Fine-tune BERT-base on SST-2. Achieve >93% accuracy. Understand all HuggingFace API calls.
-  - *Second Pass:* Fine-tune on a custom dataset. Implement evaluation loop with sklearn metrics. Save and load checkpoints.
-  - *Third Pass:* Apply LoRA (PEFT) to BERT fine-tuning. Compare full fine-tune vs LoRA on GPU memory and accuracy.
+  - _First Pass:_ Fine-tune BERT-base on SST-2. Achieve >93% accuracy. Understand all HuggingFace API calls.
+  - _Second Pass:_ Fine-tune on a custom dataset. Implement evaluation loop with sklearn metrics. Save and load checkpoints.
+  - _Third Pass:_ Apply LoRA (PEFT) to BERT fine-tuning. Compare full fine-tune vs LoRA on GPU memory and accuracy.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "BERT Fine-tuning from Scratch: Every API Call Explained"
@@ -1907,7 +1967,8 @@ scheduler   = get_linear_schedule_with_warmup(
 ---
 
 ### GPT & Decoder-Only Models: Language Modeling, In-Context Learning
-*Phase 3 · Weeks 38–39*
+
+_Phase 3 · Weeks 38–39_
 
 - **What:** GPT-style models: decoder-only transformer with causal (left-to-right) self-attention mask. Trained on next-token prediction: L = −Σₜ log P(xₜ|x₁,...,xₜ₋₁). **GPT-2 (117M–1.5B):** zero-shot task performance via prompt engineering. **GPT-3 (175B):** few-shot in-context learning without gradient updates — k examples in the prompt shift behavior. **In-context learning:** the model uses the prompt's examples as implicit gradient updates (Bayesian interpretation: posterior update via attention over context).
 
@@ -1931,6 +1992,7 @@ scheduler   = get_linear_schedule_with_warmup(
   - **Problem Sets:** Generate text with GPT-2 using all sampling strategies. Implement KV-cache from scratch.
 
 - **How to Get Started Immediately:**
+
 ```python
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import torch
@@ -1958,9 +2020,9 @@ print(generate("In machine learning, gradient descent is"))
 ```
 
 - **Outcomes:**
-  - *First Pass:* Load GPT-2. Experiment with all sampling strategies. Deploy text generation Streamlit app.
-  - *Second Pass:* Implement KV-cache from scratch on your mini-GPT. Measure inference speedup.
-  - *Third Pass:* Fine-tune GPT-2 on a custom domain (e.g., technical documentation, code). Deploy as generation API.
+  - _First Pass:_ Load GPT-2. Experiment with all sampling strategies. Deploy text generation Streamlit app.
+  - _Second Pass:_ Implement KV-cache from scratch on your mini-GPT. Measure inference speedup.
+  - _Third Pass:_ Fine-tune GPT-2 on a custom domain (e.g., technical documentation, code). Deploy as generation API.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Temperature, Top-k, Top-p Sampling — When to Use Each and Why"
@@ -1969,7 +2031,8 @@ print(generate("In machine learning, gradient descent is"))
 ---
 
 ### Fine-tuning: Full Fine-tune, LoRA, PEFT, Instruction Tuning
-*Phase 3 · Weeks 39–40*
+
+_Phase 3 · Weeks 39–40_
 
 - **What:** **Full fine-tuning:** update all parameters on labeled data. GPU-intensive (needs full model VRAM). **LoRA (Low-Rank Adaptation):** freeze base model, add low-rank matrices ΔW = BA (B: d×r, A: r×k, r << min(d,k)) to each attention weight. Only B and A are trained — 10–1000x fewer parameters. **QLoRA:** 4-bit quantize base model + LoRA adapters in 16-bit. Enables 7B model fine-tuning on 8GB VRAM (your RTX 4060). **PEFT library (HuggingFace):** standardizes LoRA, prefix tuning, prompt tuning. **Instruction tuning:** fine-tune on (instruction, response) pairs to improve instruction-following.
 
@@ -1994,6 +2057,7 @@ print(generate("In machine learning, gradient descent is"))
   - **Problem Sets:** Fine-tune Mistral-7B on a custom dataset using QLoRA on your RTX 4060. Compare with BERT full fine-tune on same task.
 
 - **How to Get Started Immediately:**
+
 ```python
 # pip install peft transformers bitsandbytes accelerate datasets
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
@@ -2027,9 +2091,9 @@ model.print_trainable_parameters()
 ```
 
 - **Outcomes:**
-  - *First Pass:* Fine-tune BERT with LoRA on SST-2. Compare GPU memory vs full fine-tune. Understand PEFT API.
-  - *Second Pass:* QLoRA fine-tune Mistral-7B on a custom instruction dataset (alpaca-format) on your RTX 4060.
-  - *Third Pass:* Evaluate fine-tuned model using ROUGE, BERTScore, or task-specific metrics. Deploy via FastAPI.
+  - _First Pass:_ Fine-tune BERT with LoRA on SST-2. Compare GPU memory vs full fine-tune. Understand PEFT API.
+  - _Second Pass:_ QLoRA fine-tune Mistral-7B on a custom instruction dataset (alpaca-format) on your RTX 4060.
+  - _Third Pass:_ Evaluate fine-tuned model using ROUGE, BERTScore, or task-specific metrics. Deploy via FastAPI.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "LoRA Derivation: Why Low-Rank Updates Work and How QLoRA Fits 7B in 8GB VRAM"
@@ -2039,7 +2103,8 @@ model.print_trainable_parameters()
 ---
 
 ### HuggingFace Ecosystem: Transformers, Datasets, Hub, Evaluate
-*Phase 3 · Week 40*
+
+_Phase 3 · Week 40_
 
 - **What:** HuggingFace provides: **`transformers`** — 200k+ pretrained models with unified API (`AutoModel`, `AutoTokenizer`, `pipeline()`). **`datasets`** — 10k+ datasets with streaming support. **`peft`** — parameter-efficient fine-tuning. **`evaluate`** — standardized metric computation. **`accelerate`** — distributed training abstraction. **`hub`** — model/dataset/space hosting. **`trl`** — RLHF, DPO, SFT training. The HuggingFace Hub is the central registry of the modern ML ecosystem.
 
@@ -2061,6 +2126,7 @@ model.print_trainable_parameters()
   - **Problem Sets:** Reproduce any paper result using HF models. Push your fine-tuned model to Hub as a public demo.
 
 - **How to Get Started Immediately:**
+
 ```python
 from transformers import pipeline
 
@@ -2084,9 +2150,9 @@ model     = AutoModelForTokenClassification.from_pretrained("dbmdz/bert-large-ca
 ```
 
 - **Outcomes:**
-  - *First Pass:* All HF pipelines: classification, NER, QA, summarization, translation. Push your fine-tuned model to Hub.
-  - *Second Pass:* Implement training loop using HF `Trainer` and `TrainingArguments`. Understand all arguments.
-  - *Third Pass:* Use `accelerate` for distributed training (simulate with gradient accumulation on single GPU). Push model to Hub with model card.
+  - _First Pass:_ All HF pipelines: classification, NER, QA, summarization, translation. Push your fine-tuned model to Hub.
+  - _Second Pass:_ Implement training loop using HF `Trainer` and `TrainingArguments`. Understand all arguments.
+  - _Third Pass:_ Use `accelerate` for distributed training (simulate with gradient accumulation on single GPU). Push model to Hub with model card.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "HuggingFace API: From pipeline() to AutoModel — What Gets Abstracted"
@@ -2095,12 +2161,14 @@ model     = AutoModelForTokenClassification.from_pretrained("dbmdz/bert-large-ca
 ---
 
 ## PHASE 4: Applied LLM Engineering
+
 ### Weeks 41–48 · Production-grade RAG, Agents, MLOps
 
 ---
 
 ### RAG: Retrieval-Augmented Generation Systems
-*Phase 4 · Weeks 41–43*
+
+_Phase 4 · Weeks 41–43_
 
 - **What:** RAG (Lewis et al. 2020) augments LLMs with external knowledge retrieval at inference time. Pipeline: (1) **Ingestion:** chunk documents → embed (e.g., `text-embedding-3-small`) → store in vector DB (Chroma, FAISS, Pinecone). (2) **Retrieval:** embed query → ANN search → retrieve top-k chunks (cosine/dot-product similarity). (3) **Generation:** inject retrieved context into LLM prompt → generate answer grounded in retrieved documents. Prevents hallucination by keeping LLM grounded in actual documents. Advanced: HyDE (hypothetical document embedding), MMR (Maximum Marginal Relevance), re-ranking with cross-encoders.
 
@@ -2126,6 +2194,7 @@ model     = AutoModelForTokenClassification.from_pretrained("dbmdz/bert-large-ca
   - **Problem Sets:** Build RAG over: (1) a research paper PDF, (2) a GitHub repo README, (3) a Wikipedia article. Evaluate with RAGAS.
 
 - **How to Get Started Immediately:**
+
 ```python
 # pip install chromadb sentence-transformers anthropic pypdf langchain
 
@@ -2169,9 +2238,9 @@ print(rag_query("What is the main contribution of this paper?"))
 ```
 
 - **Outcomes:**
-  - *First Pass:* Basic RAG pipeline over a PDF with Chroma + SentenceTransformers + any LLM API. Streamlit Q&A interface.
-  - *Second Pass:* Add HyDE for better retrieval. Add cross-encoder re-ranking. Evaluate with RAGAS (faithfulness, relevance).
-  - *Third Pass:* Build production RAG: document ingestion pipeline, persistent vector store, FastAPI backend, Streamlit frontend. Full deployment.
+  - _First Pass:_ Basic RAG pipeline over a PDF with Chroma + SentenceTransformers + any LLM API. Streamlit Q&A interface.
+  - _Second Pass:_ Add HyDE for better retrieval. Add cross-encoder re-ranking. Evaluate with RAGAS (faithfulness, relevance).
+  - _Third Pass:_ Build production RAG: document ingestion pipeline, persistent vector store, FastAPI backend, Streamlit frontend. Full deployment.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Building RAG from Scratch: Vector DB, Embeddings, and LLM Integration Explained"
@@ -2181,7 +2250,8 @@ print(rag_query("What is the main contribution of this paper?"))
 ---
 
 ### LLM Agents: Tool Use, Planning, ReAct, LangChain/LlamaIndex
-*Phase 4 · Weeks 43–45*
+
+_Phase 4 · Weeks 43–45_
 
 - **What:** LLM Agents are LLMs augmented with tools (APIs, code executors, web search, databases) and a reasoning loop. **ReAct framework (Yao et al. 2023):** interleaves Reasoning (chain-of-thought) and Acting (tool calls) in a Thought → Action → Observation loop. **Tool use:** LLM outputs structured JSON tool calls; agent runtime executes them and feeds results back. **Planning:** multi-step task decomposition. **Memory:** short-term (conversation), long-term (vector store), episodic (summarized history). Frameworks: LangChain, LlamaIndex, AutoGen, CrewAI.
 
@@ -2206,6 +2276,7 @@ print(rag_query("What is the main contribution of this paper?"))
   - **Problem Sets:** Build agents for: (1) web search + summarization, (2) Python code execution, (3) database query agent
 
 - **How to Get Started Immediately:**
+
 ```python
 import anthropic, json
 
@@ -2273,9 +2344,9 @@ print(run_agent("What is 1234 * 5678 and explain the calculation?"))
 ```
 
 - **Outcomes:**
-  - *First Pass:* ReAct agent from scratch with 2–3 tools. No frameworks. Understand every API call.
-  - *Second Pass:* Add memory (conversation history + vector store for long-term). Add error handling for tool failures.
-  - *Third Pass:* Production agent: FastAPI backend + Streamlit chat interface + Docker deployment. Evaluate with task success rate metric.
+  - _First Pass:_ ReAct agent from scratch with 2–3 tools. No frameworks. Understand every API call.
+  - _Second Pass:_ Add memory (conversation history + vector store for long-term). Add error handling for tool failures.
+  - _Third Pass:_ Production agent: FastAPI backend + Streamlit chat interface + Docker deployment. Evaluate with task success rate metric.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Building an LLM Agent from Scratch: ReAct Loop, Tool Use, and Failure Modes"
@@ -2285,7 +2356,8 @@ print(run_agent("What is 1234 * 5678 and explain the calculation?"))
 ---
 
 ### Prompt Engineering & LLM API Integration
-*Phase 4 · Weeks 41–42 (parallel to RAG start)*
+
+_Phase 4 · Weeks 41–42 (parallel to RAG start)_
 
 - **What:** Systematic techniques for eliciting desired LLM behaviors via prompt design: **Zero-shot, Few-shot, Chain-of-Thought (CoT), Tree-of-Thought (ToT), ReAct**. Output formatting: structured JSON via function calling/tool use, regex constraints, grammar-based sampling. **System prompts:** persona, guardrails, format specification. **Prompt templates:** parametric prompts for production pipelines. API integration: streaming, async, retry logic, cost estimation, token counting.
 
@@ -2309,7 +2381,8 @@ print(run_agent("What is 1234 * 5678 and explain the calculation?"))
   - **Problem Sets:** Build a structured extraction pipeline for 5 different document types. Measure accuracy vs cost.
 
 - **How to Get Started Immediately:**
-```python
+
+````python
 import anthropic, json
 from pydantic import BaseModel
 
@@ -2344,12 +2417,12 @@ Respond with ONLY valid JSON matching the schema exactly."""
     if raw.startswith("```"):
         raw = raw.split("```")[1].lstrip("json\n")
     return InvoiceData(**json.loads(raw))
-```
+````
 
 - **Outcomes:**
-  - *First Pass:* Implement all prompting techniques (zero-shot, few-shot, CoT, structured extraction). Measure quality.
-  - *Second Pass:* Build async LLM pipeline with retry logic and cost tracking. Implement streaming responses in Streamlit.
-  - *Third Pass:* Production extraction pipeline: batch processing, error handling, Pydantic validation, FastAPI endpoint.
+  - _First Pass:_ Implement all prompting techniques (zero-shot, few-shot, CoT, structured extraction). Measure quality.
+  - _Second Pass:_ Build async LLM pipeline with retry logic and cost tracking. Implement streaming responses in Streamlit.
+  - _Third Pass:_ Production extraction pipeline: batch processing, error handling, Pydantic validation, FastAPI endpoint.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Structured Output Extraction with LLMs: Reliability Patterns for Production"
@@ -2358,7 +2431,8 @@ Respond with ONLY valid JSON matching the schema exactly."""
 ---
 
 ### MLOps Foundations: Experiment Tracking, Model Registry, Monitoring
-*Phase 4 · Weeks 46–47*
+
+_Phase 4 · Weeks 46–47_
 
 - **What:** **Experiment tracking (MLflow, wandb):** log hyperparameters, metrics, artifacts per run — enables reproducibility and comparison. **Model registry:** version control for model artifacts with staging (development → staging → production) and rollback capability. **Data versioning (DVC):** track dataset versions alongside code. **Model monitoring:** detect data drift (KS test, population stability index), model drift (performance degradation), and data quality issues in production.
 
@@ -2381,6 +2455,7 @@ Respond with ONLY valid JSON matching the schema exactly."""
   - **Problem Sets:** Set up wandb on your transformer training. Implement a drift detection script using KS test.
 
 - **How to Get Started Immediately:**
+
 ```python
 import wandb, torch
 
@@ -2421,9 +2496,9 @@ wandb.finish()
 ```
 
 - **Outcomes:**
-  - *First Pass:* wandb integrated into all training loops. All experiments logged. Compare runs via wandb dashboard.
-  - *Second Pass:* MLflow model registry: log model, register version, transition to production. DVC for dataset versioning.
-  - *Third Pass:* Production monitoring: implement drift detection script that runs daily, sends alert if PSI > 0.2.
+  - _First Pass:_ wandb integrated into all training loops. All experiments logged. Compare runs via wandb dashboard.
+  - _Second Pass:_ MLflow model registry: log model, register version, transition to production. DVC for dataset versioning.
+  - _Third Pass:_ Production monitoring: implement drift detection script that runs daily, sends alert if PSI > 0.2.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "MLOps from Zero: Setting Up Experiment Tracking, Model Registry, and Drift Monitoring"
@@ -2432,7 +2507,8 @@ wandb.finish()
 ---
 
 ### Docker & Production Deployment
-*Phase 4 · Week 48*
+
+_Phase 4 · Week 48_
 
 - **What:** Docker packages applications and their dependencies into portable container images. For ML: Dockerfile specifies base image (CUDA-enabled), Python version, library installation, model weight copying, and entrypoint (uvicorn for FastAPI). `docker-compose.yml` orchestrates multi-container apps (FastAPI + Streamlit + vector DB). Key concepts: image vs container, layer caching, multi-stage builds (smaller production images), volume mounts (for model weights), environment variables for secrets.
 
@@ -2453,6 +2529,7 @@ wandb.finish()
   - **Problem Sets:** Containerize every FastAPI service you built. Deploy one to a free cloud provider.
 
 - **How to Get Started Immediately:**
+
 ```dockerfile
 # Dockerfile for FastAPI ML service
 # Multi-stage: build stage (with dev deps) → production stage (minimal)
@@ -2489,7 +2566,7 @@ services:
       - MODEL_PATH=/models/lgbm_model.pkl
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     volumes:
-      - ./models:/models  # mount model weights separately
+      - ./models:/models # mount model weights separately
 
   frontend:
     image: streamlit-app:latest
@@ -2509,9 +2586,9 @@ volumes:
 ```
 
 - **Outcomes:**
-  - *First Pass:* Containerize FastAPI service. Run locally. Push to Docker Hub.
-  - *Second Pass:* docker-compose with FastAPI + Streamlit + ChromaDB. One command to start the full stack.
-  - *Third Pass:* GitHub Actions: on push to main, build → test → push image → deploy to Render. Full CI/CD.
+  - _First Pass:_ Containerize FastAPI service. Run locally. Push to Docker Hub.
+  - _Second Pass:_ docker-compose with FastAPI + Streamlit + ChromaDB. One command to start the full stack.
+  - _Third Pass:_ GitHub Actions: on push to main, build → test → push image → deploy to Render. Full CI/CD.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "Dockerizing an ML API: From Jupyter Notebook to Production Container in 1 Hour"
@@ -2520,12 +2597,14 @@ volumes:
 ---
 
 ## PHASE 5: Interview Prep & Portfolio Finalization
+
 ### Weeks 49–52 · Convert knowledge to offers
 
 ---
 
 ### ML Technical Interview Preparation
-*Phase 5 · Weeks 49–52*
+
+_Phase 5 · Weeks 49–52_
 
 - **What:** ML interviews assess: (1) **ML theory** — derivations, algorithm trade-offs, when to use what, (2) **ML coding** — implement algorithms from scratch in Python/NumPy, (3) **ML system design** — design a complete ML system end-to-end, (4) **Case studies** — diagnose a failing model, (5) **Coding (DSA)** — LeetCode medium, focus on arrays, hashmaps, graphs, dynamic programming.
 
@@ -2553,6 +2632,7 @@ volumes:
   - **Problem Sets:** deep-ml.com — complete ALL problems · LeetCode: top 50 problems from arrays, strings, hashmaps · Kaggle: achieve a medal on at least one competition
 
 - **How to Get Started Immediately:**
+
 ```python
 # Run this mock interview question right now:
 # "Implement K-Means from scratch in NumPy with K-Means++ init"
@@ -2564,9 +2644,9 @@ volumes:
 ```
 
 - **Outcomes:**
-  - *First Pass:* Complete all deep-ml.com problems. 50 LeetCode medium. One mock interview/week.
-  - *Second Pass:* 3 ML system design mockups (written). One full technical blog explaining your approach to each.
-  - *Third Pass:* Final portfolio review: 3 deployed projects with public URLs, 5 blog posts, GitHub with 100+ commits, HuggingFace Hub with 2+ models.
+  - _First Pass:_ Complete all deep-ml.com problems. 50 LeetCode medium. One mock interview/week.
+  - _Second Pass:_ 3 ML system design mockups (written). One full technical blog explaining your approach to each.
+  - _Third Pass:_ Final portfolio review: 3 deployed projects with public URLs, 5 blog posts, GitHub with 100+ commits, HuggingFace Hub with 2+ models.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog Series: "ML Interview Prep: Deriving Backprop in 15 Minutes Flat"
@@ -2575,7 +2655,8 @@ volumes:
 ---
 
 ### Portfolio Strategy & GitHub Profile Optimization
-*Phase 5 · Weeks 49–52*
+
+_Phase 5 · Weeks 49–52_
 
 - **What:** Your portfolio is: (1) **GitHub profile** — pinned repos, contribution graph, quality of READMEs, CI badges, (2) **Deployed projects** — public URLs showing live demos, (3) **Technical writing** — blog posts demonstrating depth of understanding, (4) **HuggingFace Hub** — public models and Spaces, (5) **Kaggle** — competition medals and public notebooks.
 
@@ -2595,10 +2676,12 @@ volumes:
   - **YouTube:** Search: "GitHub profile README portfolio tips for ML engineers"
 
 - **How to Get Started Immediately (Portfolio Checklist):**
+
 ```markdown
 ## Portfolio Checklist for ML Internship
 
 ### GitHub (minimum standard)
+
 - [ ] Profile README with bio, skills, project links
 - [ ] 3+ pinned repos with clear descriptions
 - [ ] Each repo has: README, requirements.txt, CI badge, demo GIF/screenshot
@@ -2606,11 +2689,13 @@ volumes:
 - [ ] All repos use Conventional Commits
 
 ### Projects (minimum 3 deployed)
+
 - [ ] P1: Classical ML — LightGBM + SHAP + Streamlit (HuggingFace Spaces URL)
 - [ ] P2: TinyTorch — Autograd engine with training demo
 - [ ] P3: RAG System — FastAPI + ChromaDB + Streamlit (Render/Railway URL)
 
 ### Writing (minimum 5 posts)
+
 - [ ] 1 derivation post (backprop, XGBoost objective, etc.)
 - [ ] 1 project deep-dive (how you built your RAG system)
 - [ ] 1 benchmark/comparison post (LoRA vs full fine-tune)
@@ -2618,19 +2703,21 @@ volumes:
 - [ ] 1 system design post (design a recommendation system)
 
 ### HuggingFace
+
 - [ ] At least 1 fine-tuned model with model card
 - [ ] At least 1 Space (Streamlit demo)
 - [ ] All models have proper model cards
 
 ### Kaggle
+
 - [ ] At least 1 competition with public notebook
 - [ ] Top 20% placement on at least one structured data competition
 ```
 
 - **Outcomes:**
-  - *First Pass:* Audit all existing projects. Fix READMEs. Add demo GIFs. Ensure all are deployable.
-  - *Second Pass:* Write 5 technical blog posts. Submit to Towards Data Science or personal blog.
-  - *Third Pass:* Apply to 20 internships. Tailor cover letter to each. Reference specific projects and blog posts.
+  - _First Pass:_ Audit all existing projects. Fix READMEs. Add demo GIFs. Ensure all are deployable.
+  - _Second Pass:_ Write 5 technical blog posts. Submit to Towards Data Science or personal blog.
+  - _Third Pass:_ Apply to 20 internships. Tailor cover letter to each. Reference specific projects and blog posts.
 
 - **What I Can Learn From It & Resources to Generate:**
   - Blog: "My ML Internship Portfolio — What Worked and What Didn't"
@@ -2639,11 +2726,13 @@ volumes:
 ---
 
 ## PROJECT PROGRESSION
+
 ### 8 Projects: Beginner Tabular → Production LLM System
 
 ---
 
 ### Project 1: Tabular ML Baseline Pipeline
+
 **Tier:** Beginner · **When:** Week 4 (after Linear + Logistic Regression)
 
 **Description:** End-to-end tabular ML pipeline on a real-world dataset. Feature engineering, missing value imputation, categorical encoding, Linear/Logistic Regression baselines, model evaluation with full metrics suite.
@@ -2653,6 +2742,7 @@ volumes:
 **Tech Stack:** `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `streamlit`
 
 **Deliverables:**
+
 - EDA notebook with profiling report
 - Feature engineering pipeline (sklearn Pipeline)
 - Model comparison: Logistic Regression vs Decision Tree vs baseline
@@ -2664,6 +2754,7 @@ volumes:
 ---
 
 ### Project 2: LightGBM + SHAP ML Explainability Dashboard
+
 **Tier:** Intermediate · **When:** Week 12 (after XGBoost/LightGBM)
 
 **Description:** Full ML pipeline on a structured Kaggle competition dataset. Feature engineering, LightGBM training with Optuna hyperparameter optimization, SHAP global and local explanations, deployed as an interactive Streamlit dashboard.
@@ -2673,6 +2764,7 @@ volumes:
 **Tech Stack:** `lightgbm`, `xgboost`, `optuna`, `shap`, `streamlit`, `fastapi`, `pydantic`
 
 **Deliverables:**
+
 - Optuna hyperparameter search with wandb logging
 - SHAP: summary plots, force plots, dependence plots
 - FastAPI `/predict` endpoint with SHAP explanation in response JSON
@@ -2684,6 +2776,7 @@ volumes:
 ---
 
 ### Project 3: TinyTorch — From-Scratch Deep Learning Framework
+
 **Tier:** Intermediate-Advanced · **When:** Week 22 (after Phase 2 autograd section)
 
 **Description:** Your own deep learning framework built from scratch in Python. Autograd engine, Module system, optimizers (SGD, AdamW), DataLoader, training loop. Train an MLP on MNIST and compare accuracy/speed with equivalent PyTorch model.
@@ -2691,6 +2784,7 @@ volumes:
 **Tech Stack:** `numpy`, `cupy` (optional CUDA backend), no ML frameworks
 
 **Deliverables:**
+
 - `tinytorch/` Python package: Tensor, autograd engine, Module, Linear, ReLU, LayerNorm, SGD, AdamW, DataLoader
 - Unit tests with numerical gradient verification for every operation
 - Benchmark notebook: TinyTorch vs PyTorch on MNIST (accuracy should match, speed ≈ 50x slower — that's expected)
@@ -2702,6 +2796,7 @@ volumes:
 ---
 
 ### Project 4: Character-Level Language Model from Scratch
+
 **Tier:** Intermediate · **When:** Week 30 (after RNNs + PyTorch)
 
 **Description:** Implement a character-level language model (first LSTM, then Transformer) trained on Shakespeare or a Python code corpus. Generate coherent text. Deploy as a text generation web app.
@@ -2711,6 +2806,7 @@ volumes:
 **Tech Stack:** `pytorch`, `streamlit`, `fastapi`
 
 **Deliverables:**
+
 - LSTM character LM: train to <1.5 bits/char on Shakespeare
 - Mini-GPT (decoder-only transformer, 6 layers, 6 heads, d_model=384): train to <1.3 bits/char
 - Text generation Streamlit app: input prompt → generate N characters with temperature control
@@ -2721,6 +2817,7 @@ volumes:
 ---
 
 ### Project 5: BERT Fine-tuned NLP API
+
 **Tier:** Advanced · **When:** Week 38 (after BERT + HuggingFace)
 
 **Description:** Fine-tune BERT (with LoRA for efficiency) on a custom NLP task (sentiment, NER, or a domain-specific classification task). Expose via FastAPI. Evaluate with proper NLP metrics (F1, ROUGE, BERTScore).
@@ -2730,6 +2827,7 @@ volumes:
 **Tech Stack:** `transformers`, `peft`, `datasets`, `fastapi`, `docker`, `huggingface_hub`
 
 **Deliverables:**
+
 - LoRA fine-tuned BERT/RoBERTa on custom task (>90% accuracy)
 - Proper train/val/test evaluation with sklearn + HuggingFace `evaluate`
 - FastAPI `/classify` endpoint with batch inference support
@@ -2742,6 +2840,7 @@ volumes:
 ---
 
 ### Project 6: Production RAG System
+
 **Tier:** Advanced · **When:** Week 43 (after RAG topic)
 
 **Description:** Full production-grade RAG system. Multi-document ingestion, semantic chunking, embedding, vector storage, retrieval with re-ranking, LLM generation, RAGAS evaluation. FastAPI backend + Streamlit frontend + Docker deployment.
@@ -2751,6 +2850,7 @@ volumes:
 **Tech Stack:** `anthropic` or `openai`, `chromadb` or `faiss`, `sentence-transformers`, `fastapi`, `streamlit`, `docker`, `pydantic`
 
 **Deliverables:**
+
 - Document ingestion pipeline: PDF + web scraping → chunking → embedding → storage
 - Retrieval: bi-encoder retrieval + cross-encoder re-ranking
 - Generation: grounded LLM responses with citations
@@ -2764,6 +2864,7 @@ volumes:
 ---
 
 ### Project 7: LLM Agent with Tool Use
+
 **Tier:** Advanced · **When:** Week 45 (after Agents topic)
 
 **Description:** Production-grade LLM agent that uses tools (web search, code execution, database queries, file I/O) to accomplish multi-step tasks. Built from scratch using the Anthropic API — no LangChain wrapper. FastAPI backend with configurable tool registry.
@@ -2771,6 +2872,7 @@ volumes:
 **Tech Stack:** `anthropic`, `fastapi`, `streamlit`, `docker`, `pydantic`
 
 **Deliverables:**
+
 - ReAct agent with at minimum: web_search, python_repl, read_file, write_file tools
 - Configurable system prompt and tool registry
 - Conversation memory (short-term) + vector store summarization (long-term)
@@ -2784,11 +2886,13 @@ volumes:
 ---
 
 ### Project 8: End-to-End LLM Application — Deployed, Monitored, Evaluated
+
 **Tier:** Production · **When:** Week 48 (end of Phase 4)
 
 **Description:** Your capstone. A complete, domain-specific LLM application combining RAG + Agents + fine-tuning + monitoring. Choose a domain you care about (e.g., "ML Paper Summarizer & Q&A Agent", "Code Review Assistant", "Technical Interview Practice System"). This is your flagship portfolio project.
 
 **Example: "ML Paper Assistant"**
+
 - Ingests arXiv ML papers (RAG pipeline)
 - Fine-tuned embedding model for ML-specific retrieval
 - Agent that can: search papers, compare methods, explain concepts, generate code examples
@@ -2798,6 +2902,7 @@ volumes:
 **Tech Stack:** `anthropic`, `transformers`, `peft`, `chromadb`, `fastapi`, `streamlit`, `docker`, `wandb`, `github-actions`
 
 **Deliverables:**
+
 - Full application with distinct frontend (Streamlit) and backend (FastAPI)
 - wandb tracking for LLM call costs, latency, user satisfaction
 - Automated evaluation suite running weekly
@@ -2813,6 +2918,7 @@ volumes:
 ## Master Resource Reference
 
 ### Essential Papers (Read in Order)
+
 1. Rumelhart et al. (1986) — Backpropagation
 2. Breiman (2001) — Random Forests
 3. Friedman (2001) — Gradient Boosting Machines
@@ -2831,27 +2937,29 @@ volumes:
 16. Lundberg (2017) — SHAP
 
 ### Weekly Problem Set Targets
-| Phase | Platform | Daily Target |
-|---|---|---|
-| 0–1 | deep-ml.com | 2 problems/day |
-| 2 | deep-ml.com | 1 problem/day + 1 LeetCode |
-| 3 | deep-ml.com + HF courses | 1 problem/day |
-| 4–5 | Mock interviews + system design | 1 mock/week |
+
+| Phase | Platform                        | Daily Target               |
+| ----- | ------------------------------- | -------------------------- |
+| 0–1   | deep-ml.com                     | 2 problems/day             |
+| 2     | deep-ml.com                     | 1 problem/day + 1 LeetCode |
+| 3     | deep-ml.com + HF courses        | 1 problem/day              |
+| 4–5   | Mock interviews + system design | 1 mock/week                |
 
 ### Interview Preparation Timeline
-| Week | Activity |
-|---|---|
-| 20 | First mock interview (linear regression + backprop) |
-| 25 | deep-ml.com: complete 50 problems |
-| 30 | First ML system design mock (recommend a movie) |
-| 35 | LeetCode: complete 50 medium problems |
-| 40 | 2 mock interviews/week from this point |
-| 45 | Start applying to internships |
-| 48 | Complete all deep-ml.com problems |
-| 49 | 5 mock interviews/week until offer |
+
+| Week | Activity                                            |
+| ---- | --------------------------------------------------- |
+| 20   | First mock interview (linear regression + backprop) |
+| 25   | deep-ml.com: complete 50 problems                   |
+| 30   | First ML system design mock (recommend a movie)     |
+| 35   | LeetCode: complete 50 medium problems               |
+| 40   | 2 mock interviews/week from this point              |
+| 45   | Start applying to internships                       |
+| 48   | Complete all deep-ml.com problems                   |
+| 49   | 5 mock interviews/week until offer                  |
 
 ---
 
-*Generated by: Senior ML Engineer + Applied AI Tech Lead*  
-*Revision: 2024-2025 | RTX 4060 + WSL2 Ubuntu 24.04 Optimized*  
-*Total scope: 52 weeks · 30+ topics · 8 projects · 16 seminal papers*
+_Generated by: Senior ML Engineer + Applied AI Tech Lead_  
+_Revision: 2024-2025 | RTX 4060 + WSL2 Ubuntu 24.04 Optimized_  
+_Total scope: 52 weeks · 30+ topics · 8 projects · 16 seminal papers_
