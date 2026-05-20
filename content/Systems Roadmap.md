@@ -1,3 +1,10 @@
+---
+title: systems
+draft: true
+description:
+tags:
+  - example-tag
+---
 # 4-Month C/C++ Systems Programming Roadmap
 ### From Engineering Student → Advanced Low-Level Systems Developer
 **Target Environment:** Intel i7-14700HX · RTX 4060 · Ubuntu 24.04 LTS (WSL2) · ESP32 IoT Ecosystem
