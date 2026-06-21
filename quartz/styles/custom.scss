@@ -858,6 +858,7 @@ button.toc-header h3 {
   line-height: 1.65;
   font-style: italic;
 }
+
 /* ---- Oneko Toggle ---- */
 #oneko-toggle {
   position: fixed;
@@ -905,5 +906,53 @@ button.toc-header h3 {
 
   &:hover::after {
     opacity: 1;
+  }
+}
+
+/* ---- Webring ---- */
+.webring {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  a::after {
+    display: none !important;
+  }
+  a svg {
+    display: none !important;
+  }
+
+  .webring-nav {
+    font-family: var(--codeFont);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--ctp-subtext1);
+    text-decoration: none !important;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--ctp-red);
+    }
+  }
+
+  .webring-center {
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+
+    img {
+      height: 31px;
+      width: auto;
+      image-rendering: pixelated;
+      border-radius: 0;
+      border: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    &:hover img {
+      border-color: var(--ctp-red);
+    }
   }
 }

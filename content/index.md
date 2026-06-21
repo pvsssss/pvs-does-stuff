@@ -58,3 +58,11 @@ If you catch me out in the wild, offering free wifi access and a watermelon flav
   <span class="about-email-addr">pratakhveer1973@gmail.com</span>
   <button class="about-copy-btn" onclick="navigator.clipboard.writeText('pratakhveer1973@gmail.com'); this.textContent='copied!'; setTimeout(() => this.textContent='copy', 1500)">copy</button>
 </div>
+<!-- replace "your-name" with the exact name from webring.json -->
+<div class="webring">
+  <a class="webring-nav" href="https://ring.seggs.lol/redirect?from=pvs&dir=prev">←</a>
+  <a class="webring-center" href="https://ring.seggs.lol/random">
+    <img src="./images/threadlocked.png" alt="threadlocked webring" />
+  </a>
+  <a class="webring-nav" href="https://ring.seggs.lol/redirect?from=pvs&dir=next">→</a>
+</div>
