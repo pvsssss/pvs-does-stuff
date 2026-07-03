@@ -62,7 +62,7 @@ If you catch me out in the wild, offering free wifi access and a watermelon flav
 <div class="webring">
   <a class="webring-nav" href="https://ring.seggs.lol/redirect?from=pvs&dir=prev">←</a>
   <a class="webring-center" href="https://ring.seggs.lol/random">
-    <img src="./images/threadlocked.png" alt="threadlocked webring" />
+    <img src="/pvs-does-stuff/Images/threadlocked.png" alt="threadlocked webring" />
   </a>
   <a class="webring-nav" href="https://ring.seggs.lol/redirect?from=pvs&dir=next">→</a>
 </div>
